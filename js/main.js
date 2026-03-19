@@ -57,23 +57,34 @@
   });
 })();
 
-// Use Case Tabs & iframe scaling
-  function switchTab(e, tabId) {
-    const wrapper = e.target.closest('.feature-tabs-wrapper');
-    wrapper.querySelectorAll('.feature-tab-btn').forEach(btn => btn.classList.remove('active'));
-    wrapper.querySelectorAll('.feature-tab-panel').forEach(panel => panel.classList.remove('active'));
-    e.target.classList.add('active');
-    wrapper.querySelector('#' + tabId).classList.add('active');
-    // Re-scale the metrics agent iframe for the newly visible tab
-    const maIframeMap = {
-      'tab-planning':    ['ma-demo-wrap-planning',   'ma-iframe-planning'],
-      'tab-metric-build':['ma-demo-wrap-metric',     'ma-iframe-metric'],
-      'tab-dashboards':  ['ma-demo-wrap-dashboards',  'ma-iframe-dashboards'],
-    };
-    if (maIframeMap[tabId]) {
-      scaleMaIframe(maIframeMap[tabId][0], maIframeMap[tabId][1]);
-    }
-  }
+// Feature accordion
+(function() {
+  var items = document.querySelectorAll('.feature-accordion-item');
+  var demoWraps = document.querySelectorAll('.feature-tabs-demo .feature-tab-demo-wrap');
+
+  items.forEach(function(item) {
+    item.querySelector('.feature-accordion-trigger').addEventListener('click', function() {
+      var panelId = item.getAttribute('data-panel');
+
+      // Deactivate all
+      items.forEach(function(i) { i.classList.remove('active'); });
+      demoWraps.forEach(function(d) { d.classList.remove('active'); });
+
+      // Activate clicked
+      item.classList.add('active');
+      var demoMap = { 'tab-planning': 'ma-demo-wrap-planning', 'tab-metric-build': 'ma-demo-wrap-metric', 'tab-dashboards': 'ma-demo-wrap-dashboards' };
+      var targetDemo = document.getElementById(demoMap[panelId]);
+      if (targetDemo) {
+        targetDemo.classList.add('active');
+        // Re-scale iframe
+        var iframeId = targetDemo.querySelector('.feature-tab-demo-iframe');
+        if (iframeId) {
+          scaleMaIframe(targetDemo.id, iframeId.id);
+        }
+      }
+    });
+  });
+})();
 
   // ── Metrics Agent iframe scaling ──
   function scaleMaIframe(wrapId, iframeId) {
@@ -96,3 +107,71 @@
   window.addEventListener('load',   scaleAllMaIframes);
   // Also scale once DOM is ready (before full load)
   document.addEventListener('DOMContentLoaded', scaleAllMaIframes);
+
+// Workflow nodes sequential loop — one active at a time
+(function() {
+  var container = document.querySelector('.workflow-map-nodes');
+  if (!container) return;
+
+  var nodes = Array.from(container.querySelectorAll('.wf-node'));
+  var connectors = Array.from(container.querySelectorAll('.wf-connector'));
+  var lineDuration = 3000;
+  var current = -1;
+  var running = false;
+  var timer = null;
+
+  function clearAll() {
+    nodes.forEach(function(n) { n.classList.remove('active'); });
+    connectors.forEach(function(c) { c.classList.remove('active'); });
+  }
+
+  function activateNext() {
+    if (!running) return;
+
+    // Clear everything each step
+    clearAll();
+
+    // Move to next (loop)
+    current = (current + 1) % nodes.length;
+
+    // Activate current node
+    nodes[current].classList.add('active');
+
+    // Flow the connector OUT of this node to the next
+    if (current < connectors.length) {
+      connectors[current].classList.add('active');
+      timer = setTimeout(activateNext, lineDuration);
+    } else {
+      // Last node — hold then loop back
+      timer = setTimeout(activateNext, lineDuration);
+    }
+  }
+
+  function start() {
+    if (running) return;
+    running = true;
+    current = -1;
+    activateNext();
+  }
+
+  function stop() {
+    running = false;
+    if (timer) clearTimeout(timer);
+    timer = null;
+    clearAll();
+    current = -1;
+  }
+
+  // Start/stop based on visibility
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        start();
+      } else {
+        stop();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(container);
+})();
