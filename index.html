@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petavue — Vertical Agents for GTM Teams</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style/colorography.css">
+<link rel="stylesheet" href="style/global.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600&family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- SECTION 1: NAV -->
+<!-- NAVBAR — navbar_component w-nav -->
+<div class="navbar_component w-nav" role="banner">
+  <div class="navbar_container">
+    <!-- Logo -->
+    <a href="/" class="navbar_logo-link">
+      <img src="assets/petavue-icon.svg" alt="Petavue" class="navbar_logo">
+    </a>
+
+    <!-- Menu -->
+    <nav class="navbar_menu" role="navigation">
+      <div class="navbar_menu-links">
+
+        <!-- Real World Impact -->
+        <a href="https://www.petavue.com/real-world" class="link_button">
+          <span>Real World Impact</span>
+          <span class="badge-new">New</span>
+        </a>
+
+        <!-- Resources Dropdown -->
+        <div class="navbar_dropdown" data-dropdown>
+          <button class="navbar_dropdown-toggle" aria-expanded="false">
+            <span>Resources</span>
+            <div class="navbar_dropdown-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div class="navbar_dropdown-list">
+            <div class="navbar_dropdown-list-wrap">
+              <div class="navbar_dropdown-inner">
+                <!-- Content Hub Column -->
+                <div class="dropdown_column dropdown_column--content">
+                  <div class="dropdown-header">Content Hub</div>
+                  <a href="https://www.petavue.com/blog" class="dropdown-card">
+                    <div class="dropdown-card-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M208,40V200a24,24,0,0,1-24,24H72a24,24,0,0,1-24-24V40Z" opacity="0.2"></path><path d="M168,128a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,128Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16ZM216,40V200a32,32,0,0,1-32,32H72a32,32,0,0,1-32-32V40a8,8,0,0,1,8-8H72V24a8,8,0,0,1,16,0v8h32V24a8,8,0,0,1,16,0v8h32V24a8,8,0,0,1,16,0v8h24A8,8,0,0,1,216,40Zm-16,8H184v8a8,8,0,0,1-16,0V48H136v8a8,8,0,0,1-16,0V48H88v8a8,8,0,0,1-16,0V48H56V200a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16Z"></path></svg>
+                    </div>
+                    <div>
+                      <div class="dropdown-card-title">Blog</div>
+                      <div class="dropdown-card-desc">All the latest news and updates.</div>
+                    </div>
+                  </a>
+                  <a href="https://www.petavue.com/resources/glossary" class="dropdown-card">
+                    <div class="dropdown-card-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,104v48H48V104Z" opacity="0.2"></path><path d="M224,96H184V56a8,8,0,0,0-8-8H56V40a8,8,0,0,0-16,0V216a8,8,0,0,0,16,0v-8h88a8,8,0,0,0,8-8V160h72a8,8,0,0,0,8-8V104A8,8,0,0,0,224,96ZM168,64V96H56V64ZM136,192H56V160h80Zm80-48H56V112H216Z"></path></svg>
+                    </div>
+                    <div>
+                      <div class="dropdown-card-title">KPI Glossary</div>
+                      <div class="dropdown-card-desc">No-fluff definitions of key CX, Sales & Marketing</div>
+                    </div>
+                  </a>
+                  <a href="https://www.petavue.com/resources/ai-agent-playbook/overview" class="dropdown-card">
+                    <div class="dropdown-card-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M200,56H56A24,24,0,0,0,32,80V192a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56ZM164,184H92a20,20,0,0,1,0-40h72a20,20,0,0,1,0,40Z" opacity="0.2"></path><path d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Zm4,28H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-24,16v24H116V152ZM80,164a12,12,0,0,1,12-12h8v24H92A12,12,0,0,1,80,164Zm84,12h-8V152h8a12,12,0,0,1,0,24Z"></path></svg>
+                    </div>
+                    <div>
+                      <div class="dropdown-card-title">AI Agent Playbook</div>
+                      <div class="dropdown-card-desc">Where AI agents work (and don't).</div>
+                    </div>
+                  </a>
+                  <a href="https://www.petavue.com/resources/prompts" class="dropdown-card">
+                    <div class="dropdown-card-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M232,56V200H160a32,32,0,0,0-32,32V88a32,32,0,0,1,32-32Z" opacity="0.2"></path><path d="M232,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H24a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h72a8,8,0,0,0,8-8V56A8,8,0,0,0,232,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64ZM160,88h40a8,8,0,0,1,0,16H160a8,8,0,0,1,0-16Zm48,40a8,8,0,0,1-8,8H160a8,8,0,0,1,0-16h40A8,8,0,0,1,208,128Zm0,32a8,8,0,0,1-8,8H160a8,8,0,0,1,0-16h40A8,8,0,0,1,208,160Z"></path></svg>
+                    </div>
+                    <div>
+                      <div class="dropdown-card-title">GTM Prompt Library</div>
+                      <div class="dropdown-card-desc">Ready-to-use MCP prompts for GTM teams.</div>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Proof Column -->
+                <div class="dropdown_column dropdown_column--proof">
+                  <div class="dropdown-header">Proof</div>
+                  <a href="/success-stories/phunware-crm-data-transformation" class="casestudy-card">
+                    <img src="https://cdn.prod.website-files.com/675e93d0c15c6d2e3ed70e92/692d5a894281dd660ff69d89_c31238a0ba09b24de09524bd9574edbc_casestudy.svg" alt="Case study">
+                    <div class="cs-desc">How to leverage AI agents effectively.</div>
+                    <div class="cs-link">
+                      View Playbook
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company Dropdown -->
+        <div class="navbar_dropdown" data-dropdown>
+          <button class="navbar_dropdown-toggle" aria-expanded="false">
+            <span>Company</span>
+            <div class="navbar_dropdown-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </button>
+          <div class="navbar_dropdown-list">
+            <div class="navbar_dropdown-list-wrap">
+              <div class="navbar_dropdown-inner">
+                <div class="dropdown_column">
+                  <div class="dropdown-header">Company</div>
+                  <a href="https://www.petavue.com/our-story" class="dropdown-card">
+                    <div class="dropdown-card-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M192,96a64,64,0,1,1-64-64A64,64,0,0,1,192,96Z" opacity="0.2"></path><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg>
+                    </div>
+                    <div>
+                      <div class="dropdown-card-title">Our Story</div>
+                      <div class="dropdown-card-desc">Everything you need to know about our journey.</div>
+                    </div>
+                  </a>
+                  <a href="https://www.petavue.com/security" class="dropdown-card">
+                    <div class="dropdown-card-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M128,48v80H40.87A146.29,146.29,0,0,1,40,112V56a8,8,0,0,1,8-8Zm0,80V232s78.06-21.3,87.13-104Z" opacity="0.2"></path><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.27,47,25.53a8,8,0,0,0,4.2,0c1-.26,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40ZM120,220.55a130.85,130.85,0,0,1-30.93-18.74c-21.15-17.3-34.2-39.37-39-65.81H120ZM120,120H48.23c-.15-2.63-.23-5.29-.23-8l0-56h72Zm47.4,81.42A131.31,131.31,0,0,1,136,220.53V136h69.91C201.16,162.24,188.27,184.18,167.4,201.42ZM208,112c0,2.71-.08,5.37-.23,8H136V56h72Z"></path></svg>
+                    </div>
+                    <div>
+                      <div class="dropdown-card-title">Security</div>
+                      <div class="dropdown-card-desc">How we protect your data and privacy.</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: divider + buttons -->
+      <div class="navbar_menu-divider"></div>
+      <div class="navbar_menu-buttons">
+        <a href="https://app.petavue.com/auth/login" target="_blank" class="navbar_login">Login</a>
+        <a href="https://www.petavue.com/book-a-demo" class="btn-demo">
+          <span>Book a Demo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" width="16" height="16"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <div class="navbar_menu-button" aria-label="Toggle menu">
+      <span class="menu-icon_line"></span>
+      <span class="menu-icon_line"></span>
+      <span class="menu-icon_line"></span>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 2: HERO -->
+<section class="hero">
+  <div class="hero-badge"><div class="dot"></div> Vertical AI for B2B GTM Teams</div>
+  <h1>Your GTM data has the answer. <em>Petavue finds it</em> — before you think to ask.</h1>
+
+  <p class="subtitle">Purpose-built agents for Marketing and Revenue teams that unify your data, build verified custom metrics, and continuously surface clear recommendations — not generic AI guesses.</p>
+
+  <div class="hero-links">
+    <a href="#problem">Sound familiar? See the problem →</a>
+    <a href="#how-it-comes-together">See how it works →</a>
+    <a href="#use-cases">Browse use cases →</a>
+  </div>
+  <div class="hero-ctas">
+    <a href="https://www.petavue.com/book-a-demo" class="btn-primary">Book a Demo <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" width="16" height="16"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg></a>
+    <a href="#how" class="btn-secondary">How It Works</a>
+  </div>
+  <!-- USE CASE TABS -->
+  <div class="uc-tabs-wrap">
+
+    <!-- Tab intro label -->
+    <div class="uc-tabs-eyebrow-wrap">
+      <div class="uc-tabs-headline">From confusion to clarity — <span class="highlight-primary">same day.</span></div>
+      <div class="uc-tabs-eyebrow">See Petavue in action — pick a use case below</div>
+    </div>
+
+    <!-- Tab strip -->
+    <div class="uc-tab-strip" role="tablist">
+      <button class="uc-tab active" role="tab" data-tab="mta" data-question="Which campaigns actually drive pipeline?">
+        <span class="uc-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M160,112h48a16,16,0,0,0,16-16V48a16,16,0,0,0-16-16H160a16,16,0,0,0-16,16V64H128a24,24,0,0,0-24,24v32H72v-8A16,16,0,0,0,56,96H24A16,16,0,0,0,8,112v32a16,16,0,0,0,16,16H56a16,16,0,0,0,16-16v-8h32v32a24,24,0,0,0,24,24h16v16a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V160a16,16,0,0,0-16-16H160a16,16,0,0,0-16,16v16H128a8,8,0,0,1-8-8V88a8,8,0,0,1,8-8h16V96A16,16,0,0,0,160,112ZM56,144H24V112H56v32Zm104,16h48v48H160Zm0-112h48V96H160Z"></path></svg></span>
+        <span class="uc-tab-label">Multi-Touch Attribution</span>
+      </button>
+      <button class="uc-tab" role="tab" data-tab="velocity" data-question="Which leads convert — and how fast?">
+        <span class="uc-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M114.34,154.34l96-96a8,8,0,0,1,11.32,11.32l-96,96a8,8,0,0,1-11.32-11.32ZM128,88a63.9,63.9,0,0,1,20.44,3.33,8,8,0,1,0,5.11-15.16A80,80,0,0,0,48.49,160.88,8,8,0,0,0,56.43,168c.29,0,.59,0,.89-.05a8,8,0,0,0,7.07-8.83A64.92,64.92,0,0,1,64,152,64.07,64.07,0,0,1,128,88Zm99.74,13a8,8,0,0,0-14.24,7.3,96.27,96.27,0,0,1,5,75.71l-181.1-.07A96.24,96.24,0,0,1,128,56h.88a95,95,0,0,1,42.82,10.5A8,8,0,1,0,179,52.27a112,112,0,0,0-156.66,137A16.07,16.07,0,0,0,37.46,200H218.53a16,16,0,0,0,15.11-10.71,112.35,112.35,0,0,0-5.9-88.3Z"></path></svg></span>
+        <span class="uc-tab-label">Lead Conversion Velocity</span>
+      </button>
+      <button class="uc-tab" role="tab" data-tab="pipeline" data-question="Are we going to hit the number?">
+        <span class="uc-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z"></path></svg></span>
+        <span class="uc-tab-label">Pipeline & Forecast</span>
+      </button>
+      <button class="uc-tab" role="tab" data-tab="journey" data-question="What should marketing do for this open deal?">
+        <span class="uc-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M253.66,133.66l-24,24a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L216,132.69V128A88,88,0,0,0,56.49,76.67a8,8,0,0,1-13-9.34A104,104,0,0,1,232,128v4.69l10.34-10.35a8,8,0,0,1,11.32,11.32Zm-41.18,55A104,104,0,0,1,24,128v-4.69L13.66,133.66A8,8,0,0,1,2.34,122.34l24-24a8,8,0,0,1,11.32,0l24,24a8,8,0,0,1-11.32,11.32L40,123.31V128a87.62,87.62,0,0,0,22.24,58.41A79.66,79.66,0,0,1,98.3,157.66a48,48,0,1,1,59.4,0,79.59,79.59,0,0,1,36.08,28.78,89.68,89.68,0,0,0,5.71-7.11,8,8,0,0,1,13,9.34ZM128,152a32,32,0,1,0-32-32A32,32,0,0,0,128,152Zm0,64a88.2,88.2,0,0,0,53.92-18.49,64,64,0,0,0-107.84,0A87.57,87.57,0,0,0,128,216Z"></path></svg></span>
+        <span class="uc-tab-label">Account Journey</span>
+      </button>
+      <button class="uc-tab" role="tab" data-tab="mix" data-question="Are we fishing in the right ponds?">
+        <span class="uc-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M100,116.43a8,8,0,0,0,4-6.93v-72A8,8,0,0,0,93.34,30,104.06,104.06,0,0,0,25.73,147a8,8,0,0,0,4.52,5.81,7.86,7.86,0,0,0,3.35.74,8,8,0,0,0,4-1.07ZM88,49.62v55.26L40.12,132.51C40,131,40,129.48,40,128A88.12,88.12,0,0,1,88,49.62ZM128,24a8,8,0,0,0-8,8v91.82L41.19,169.73a8,8,0,0,0-2.87,11A104,104,0,1,0,128,24Zm0,192a88.47,88.47,0,0,1-71.49-36.68l75.52-44a8,8,0,0,0,4-6.92V40.36A88,88,0,0,1,128,216Z"></path></svg></span>
+        <span class="uc-tab-label">Source Mix Optimization</span>
+      </button>
+    </div>
+
+    <!-- Demo panels -->
+    <div class="uc-panels">
+
+      <!-- MTA — live demo -->
+      <div class="uc-panel active" data-panel="mta">
+        <p class="uc-panel-question">Which campaigns actually drive pipeline?</p>
+        <div class="uc-demo-wrap" id="uc-demo-wrap-mta">
+          <iframe class="uc-demo-iframe" id="uc-iframe-mta"
+            src="Use Cases Demo/Multi Touch Attribution/demo-engine.html"
+            scrolling="no" title="Multi-Touch Attribution demo"></iframe>
+        </div>
+      </div>
+
+      <!-- Velocity — live demo -->
+      <div class="uc-panel" data-panel="velocity">
+        <p class="uc-panel-question">Which leads convert — and how fast?</p>
+        <div class="uc-demo-wrap" id="uc-demo-wrap-velocity">
+          <iframe class="uc-demo-iframe" id="uc-iframe-velocity"
+            src="Use Cases Demo/Lead Conversion Velocity/demo-engine.html"
+            scrolling="no" title="Lead Conversion Velocity demo"></iframe>
+        </div>
+      </div>
+
+      <!-- Pipeline — live demo -->
+      <div class="uc-panel" data-panel="pipeline">
+        <p class="uc-panel-question">Are we going to hit the number?</p>
+        <div class="uc-demo-wrap" id="uc-demo-wrap-pipeline">
+          <iframe class="uc-demo-iframe" id="uc-iframe-pipeline"
+            src="Use Cases Demo/Pipeline and Forecast/demo-engine.html"
+            scrolling="no" title="Pipeline Coverage & Forecast demo"></iframe>
+        </div>
+      </div>
+
+      <!-- Journey — live demo -->
+      <div class="uc-panel" data-panel="journey">
+        <p class="uc-panel-question">What should marketing do for this open deal?</p>
+        <div class="uc-demo-wrap" id="uc-demo-wrap-journey">
+          <iframe class="uc-demo-iframe" id="uc-iframe-journey"
+            src="Use Cases Demo/Account Journey/demo-engine.html"
+            scrolling="no" title="Account Journey demo"></iframe>
+        </div>
+      </div>
+
+      <!-- Mix — live demo -->
+      <div class="uc-panel" data-panel="mix">
+        <p class="uc-panel-question">Are we fishing in the right ponds?</p>
+        <div class="uc-demo-wrap" id="uc-demo-wrap-mix">
+          <iframe class="uc-demo-iframe" id="uc-iframe-mix"
+            src="Use Cases Demo/Source Mix Optimization/demo-engine.html"
+            scrolling="no" title="Source Mix Optimization demo"></iframe>
+        </div>
+      </div>
+
+    </div><!-- /uc-panels -->
+  </div><!-- /uc-tabs-wrap -->
+
+  <script>
+    (function() {
+      const tabs = document.querySelectorAll('.uc-tab');
+      const panels = document.querySelectorAll('.uc-panel');
+
+      // All iframe panels: [tabKey, wrapId, iframeId]
+      const iframePanels = [
+        ['mta',      'uc-demo-wrap-mta',      'uc-iframe-mta'],
+        ['velocity', 'uc-demo-wrap-velocity',  'uc-iframe-velocity'],
+        ['pipeline', 'uc-demo-wrap-pipeline',  'uc-iframe-pipeline'],
+        ['journey',  'uc-demo-wrap-journey',   'uc-iframe-journey'],
+        ['mix',      'uc-demo-wrap-mix',       'uc-iframe-mix'],
+      ];
+
+      function scaleIframe(wrapId, iframeId) {
+        const wrap = document.getElementById(wrapId);
+        const iframe = document.getElementById(iframeId);
+        if (!wrap || !iframe) return;
+        const scale = wrap.offsetWidth / 1080;
+        iframe.style.transform = 'scale(' + scale + ')';
+        iframe.style.transformOrigin = 'top left';
+        wrap.style.height = (660 * scale) + 'px';
+      }
+
+      function scaleAll() {
+        iframePanels.forEach(([, wrapId, iframeId]) => scaleIframe(wrapId, iframeId));
+      }
+
+      // Sliding indicator
+      const strip = document.querySelector('.uc-tab-strip');
+      function moveIndicator(tab) {
+        const stripRect = strip.getBoundingClientRect();
+        const tabRect = tab.getBoundingClientRect();
+        strip.style.setProperty('--active-width', tabRect.width + 'px');
+        strip.style.setProperty('--active-x', (tabRect.left - stripRect.left) + 'px');
+      }
+
+      // Tab switching
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          panels.forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          moveIndicator(tab);
+          const target = tab.dataset.tab;
+          document.querySelector('.uc-panel[data-panel="' + target + '"]').classList.add('active');
+          // Re-scale the newly visible iframe
+          const entry = iframePanels.find(([key]) => key === target);
+          if (entry) scaleIframe(entry[1], entry[2]);
+        });
+      });
+
+      // Init indicator on first active tab
+      const activeTab = strip.querySelector('.uc-tab.active');
+      if (activeTab) moveIndicator(activeTab);
+
+      scaleAll();
+      window.addEventListener('resize', function() {
+        scaleAll();
+        const current = strip.querySelector('.uc-tab.active');
+        if (current) moveIndicator(current);
+      });
+    })();
+  </script>
+</section>
+
+<!-- SECTION 3: PROBLEM STATEMENT -->
+<section class="problem-section" id="problem">
+  <div class="padding-global"><div class="container-large">
+  <div class="section-label">The Problem</div>
+  <h2 class="section-heading" style="margin-bottom: 16px;"><span style="color: var(--color-primary-500);">You have the context.</span><br>You shouldn't wait to act on it.</h2>
+  <p class="section-sub" style="margin-bottom: 56px;">Most GTM teams are making high-stakes decisions on instinct — not because they lack data, but because they can't get to a clear recommendation fast enough.</p>
+
+  <div class="personas-grid">
+    <div class="persona-card">
+      <div class="persona-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,64V208H32V48H208A16,16,0,0,1,224,64Z" opacity="0.2"></path><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z"></path></svg></div>
+      <div class="persona-text">
+        <div class="persona-role">Marketing Leader</div>
+        <h3>Marketing Operations &amp; Growth</h3>
+        <p class="tagline">You already know something is off. A channel is underperforming. Pacing is slipping. But by the time you piece together a clear picture across all your sources, the moment to act has passed — and budget has already gone to the wrong place.</p>
+      </div>
+      <ul class="reality-list">
+        <li><strong>When pacing shifts:</strong> No verified picture across sources means you wait, or guess on reallocation.</li>
+        <li><strong>Before board meetings:</strong> You know the numbers — but when the CFO pushes back, you're defending a number, not a recommendation.</li>
+        <li><strong>When campaigns underdeliver:</strong> You diagnose it eventually. Two weeks and wasted spend later.</li>
+      </ul>
+    </div>
+    <div class="persona-card">
+      <div class="persona-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm40-68a28,28,0,0,1-28,28h-4v8a8,8,0,0,1-16,0v-8H104a8,8,0,0,1,0-16h36a12,12,0,0,0,0-24H116a28,28,0,0,1,0-56h4V72a8,8,0,0,1,16,0v8h16a8,8,0,0,1,0,16H116a12,12,0,0,0,0,24h24A28,28,0,0,1,168,148Z"></path></svg></div>
+      <div class="persona-text">
+        <div class="persona-role">Revenue Leader</div>
+        <h3>Revenue Operations</h3>
+        <p class="tagline">You can see the pipeline. You can see the forecast. What you can't see is what to do about it — and by the time the data tells you, it's already a quarter problem, not a week problem.</p>
+      </div>
+      <ul class="reality-list">
+        <li><strong>When conversion drops:</strong> Which segment, which rep, which stage? By the time you dig through the data, the quarter is already at risk.</li>
+        <li><strong>Before forecast reviews:</strong> Leadership wants a number they can trust. You give them one built on assumptions — not a verified recommendation you can stand behind.</li>
+        <li><strong>When deals stall:</strong> You see velocity slowing in aggregate, but no clear view of which deals need intervention today.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="problem-statement-block">
+    <h3 class="problem-headline">Every delay between signal and recommendation <strong>costs you.</strong></h3>
+    <p class="problem-subtitle">This is not another "chat with your data" tool that resembles legacy BI.<br>It's purpose-built Vertical Agents that measure, investigate, and recommend — continuously.</p>
+    <div class="problem-pillars">
+      <div class="problem-pillar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M184,89.57V84c0-25.08-37.83-44-88-44S8,58.92,8,84v40c0,20.89,26.25,37.49,64,42.46V172c0,25.08,37.83,44,88,44s88-18.92,88-44V132C248,111.3,222.58,94.68,184,89.57ZM232,132c0,13.22-30.79,28-72,28-3.73,0-7.43-.13-11.08-.37C170.49,151.77,184,139,184,124V105.74C213.87,110.19,232,122.27,232,132ZM72,150.25V126.46A183.74,183.74,0,0,0,96,128a183.74,183.74,0,0,0,24-1.54v23.79A163,163,0,0,1,96,152,163,163,0,0,1,72,150.25Zm96-40.32V124c0,8.39-12.41,17.4-32,22.87V123.5C148.91,120.37,159.84,115.71,168,109.93ZM96,56c41.21,0,72,14.78,72,28s-30.79,28-72,28S24,97.22,24,84,54.79,56,96,56ZM24,124V109.93c8.16,5.78,19.09,10.44,32,13.57v23.37C36.41,141.4,24,132.39,24,124Zm64,48v-4.17c2.63.1,5.29.17,8,.17,3.88,0,7.67-.13,11.39-.35A121.92,121.92,0,0,0,120,171.41v23.46C100.41,189.4,88,180.39,88,172Zm48,26.25V174.4a179.48,179.48,0,0,0,24,1.6,183.74,183.74,0,0,0,24-1.54v23.79a165.45,165.45,0,0,1-48,0Zm64-3.38V171.5c12.91-3.13,23.84-7.79,32-13.57V172C232,180.39,219.59,189.4,200,194.87Z"></path></svg>
+        <p><strong>Budget</strong> that should have been reallocated</p>
+      </div>
+      <div class="problem-pillar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"></path></svg>
+        <p><strong>Pipeline risk</strong> that should have been caught</p>
+      </div>
+      <div class="problem-pillar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M229.5,113,166.06,89.94,143,26.5a16,16,0,0,0-30,0L89.94,89.94,26.5,113a16,16,0,0,0,0,30l63.44,23.07L113,229.5a16,16,0,0,0,30,0l23.07-63.44L229.5,143a16,16,0,0,0,0-30ZM157.08,152.3a8,8,0,0,0-4.78,4.78L128,223.9l-24.3-66.82a8,8,0,0,0-4.78-4.78L32.1,128l66.82-24.3a8,8,0,0,0,4.78-4.78L128,32.1l24.3,66.82a8,8,0,0,0,4.78,4.78L223.9,128Z"></path></svg>
+        <p><strong>Decisions</strong> that defaulted to instinct because the data wasn't ready in time.</p>
+      </div>
+    </div>
+  </div>
+  </div></div>
+</section>
+
+<!-- SECTION 4: SOLUTION -->
+<section class="solution-section" id="solution">
+  <div class="padding-global"><div class="container-large">
+  <div class="section-label">The Solution</div>
+  <h2 class="section-heading" style="margin-bottom: 24px;">Vertical AI that knows your GTM —<br>and what to do about it</h2>
+  <p class="section-sub" style="margin-bottom: 48px;">The problem isn't that the data doesn't exist. It's that connecting it, verifying it, and turning it into a recommendation you can act on takes too long. Petavue agents are built to close that gap — with domain expertise, built-in verification, and depth that generic AI tools simply can't deliver.</p>
+
+  <div class="solution-grid">
+    <div class="solution-card">
+      <span class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M232,120h-8.34A96.14,96.14,0,0,0,136,32.34V24a8,8,0,0,0-16,0v8.34A96.14,96.14,0,0,0,32.34,120H24a8,8,0,0,0,0,16h8.34A96.14,96.14,0,0,0,120,223.66V232a8,8,0,0,0,16,0v-8.34A96.14,96.14,0,0,0,223.66,136H232a8,8,0,0,0,0-16Zm-96,87.6V200a8,8,0,0,0-16,0v7.6A80.15,80.15,0,0,1,48.4,136H56a8,8,0,0,0,0-16H48.4A80.15,80.15,0,0,1,120,48.4V56a8,8,0,0,0,16,0V48.4A80.15,80.15,0,0,1,207.6,120H200a8,8,0,0,0,0,16h7.6A80.15,80.15,0,0,1,136,207.6ZM128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152Z"></path></svg></span>
+      <h3>Built for GTM — not repurposed for it</h3>
+      <p>These agents natively understand CPL, ROAS, attribution windows, funnel stages, pipeline coverage, and conversion math. Domain knowledge that turns a data pull into a defensible recommendation.</p>
+    </div>
+    <div class="solution-card">
+      <span class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"></path></svg></span>
+      <h3>One source of truth — no ETL project</h3>
+      <p>CRM, ad platforms, spreadsheets, enterprise systems — unified automatically. No transformation pipelines. No data engineering tickets. Agents reason over your data as it exists today.</p>
+    </div>
+    <div class="solution-card">
+      <span class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M243.28,68.24l-24-23.56a16,16,0,0,0-22.59,0L104,136.23l-36.69-35.6a16,16,0,0,0-22.58.05l-24,24a16,16,0,0,0,0,22.61l71.62,72a16,16,0,0,0,22.63,0L243.33,90.91A16,16,0,0,0,243.28,68.24ZM103.62,208,32,136l24-24a.6.6,0,0,1,.08.08l42.35,41.09a8,8,0,0,0,11.19,0L208.06,56,232,79.6Z"></path></svg></span>
+      <h3>Verified metrics you can stand behind</h3>
+      <p>Built-in verification catches double-counting, mismatched date ranges, and circular logic before metrics go live. Full data lineage on every number — show your work, not defend a guess.</p>
+    </div>
+    <div class="solution-card">
+      <span class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg></span>
+      <h3>Recommendations grounded in your data — not industry averages</h3>
+      <p>Agents learn from your closed-won patterns. When they recommend a budget reallocation or flag a deal at risk, it's because your own data says so — not someone else's business.</p>
+    </div>
+    <div class="solution-card">
+      <span class="solution-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#3661ed" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg></span>
+      <h3>Depth, not just dashboards</h3>
+      <p>Petavue agents investigate: which segment, which rep, which channel, which time window. Every recommendation comes with the full story and evidence. You act — you don't dig.</p>
+    </div>
+  </div>
+  </div></div>
+</section>
+
+<!-- SECTION 4B: HOW IT COMES TOGETHER — WORKFLOW MAP -->
+<section class="workflow-map-section" id="how-it-comes-together">
+  <div class="padding-global"><div class="container-large">
+  <div class="workflow-map-inner">
+    <div class="label-center-wrap"><div class="section-label">How It Works</div></div>
+    <h2 class="section-heading center-text" style="margin: 0 auto 12px; max-width: 800px;">From raw data to clear recommendation — <span style="color: var(--color-primary-500);">one workflow</span></h2>
+    <p class="section-sub center-text" style="margin: 0 auto 0; max-width: 560px;">Two agents. Four stages. Every use case you saw above runs through the same pipeline — here's what's powering it at each step.</p>
+
+    <div class="workflow-map-nodes">
+      <div class="wf-node">
+        <div class="wf-node-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M237.66,66.34a8,8,0,0,0-11.32,0L192,100.69,155.31,64l34.35-34.34a8,8,0,1,0-11.32-11.32L144,52.69,117.66,26.34a8,8,0,0,0-11.32,11.32L112.69,44l-53,53a40,40,0,0,0,0,56.57l15.71,15.71L26.34,218.34a8,8,0,0,0,11.32,11.32l49.09-49.09,15.71,15.71a40,40,0,0,0,56.57,0l53-53,6.34,6.35a8,8,0,0,0,11.32-11.32L203.31,112l34.35-34.34A8,8,0,0,0,237.66,66.34ZM147.72,185a24,24,0,0,1-33.95,0L71,142.23a24,24,0,0,1,0-33.95l53-53L200.69,132Z"></path></svg>
+        </div>
+        <div class="wf-node-step">Stage 1</div>
+        <div class="wf-node-title">Connect &amp; Unify</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-node">
+        <div class="wf-node-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"></path></svg>
+        </div>
+        <div class="wf-node-step">Stage 2</div>
+        <div class="wf-node-title">Define &amp; Verify</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-node">
+        <div class="wf-node-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+        </div>
+        <div class="wf-node-step">Stage 3</div>
+        <div class="wf-node-title">Investigate &amp; Explain</div>
+      </div>
+      <div class="wf-connector"></div>
+      <div class="wf-node">
+        <div class="wf-node-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg>
+        </div>
+        <div class="wf-node-step">Stage 4</div>
+        <div class="wf-node-title">Act on Recommendations</div>
+      </div>
+    </div>
+  </div>
+  </div></div>
+</section>
+
+<!-- SECTION 5: AGENTS INTRO -->
+<section class="agents-intro-section" id="agents">
+  <div class="padding-global"><div class="container-large">
+  <div class="agents-intro-inner">
+    <div class="agents-intro-header">
+      <h2><span class="highlight-agents">Meet your agents.</span><br>Built for your business.</h2>
+      <p>Two agents, purpose-built for B2B GTM teams. One builds the metrics foundation. The other runs on top of it — continuously measuring, investigating, and surfacing recommendations.</p>
+    </div>
+    <div class="agents-cards">
+      <div class="agent-intro-card metrics">
+        <div class="agent-card-icon"><img src="assets/icon-metrics-agent.svg" alt="Metrics Agent" width="32" height="32"></div>
+        <div class="agent-card-header">
+          <h3 class="agent-card-name">Metrics Agent</h3>
+          <h4 class="agent-card-subtitle">Build custom metrics your whole team can trust</h4>
+        </div>
+        <p>Describe what you want to measure in plain English — across multiple sources. The Metrics Agent adapts to your custom data model and builds verified metrics without SQL knowledge or engineering tickets. Get from first login to verified metrics in minutes — not weeks.</p>
+        <div class="agent-card-tags">
+          <div class="agent-tag-row scroll-left">
+            <div class="agent-tag-row-inner">
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M168,128a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,128Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16ZM216,40V200a32,32,0,0,1-32,32H72a32,32,0,0,1-32-32V40a8,8,0,0,1,8-8H72V24a8,8,0,0,1,16,0v8h32V24a8,8,0,0,1,16,0v8h32V24a8,8,0,0,1,16,0v8h24A8,8,0,0,1,216,40Zm-16,8H184v8a8,8,0,0,1-16,0V48H136v8a8,8,0,0,1-16,0V48H88v8a8,8,0,0,1-16,0V48H56V200a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16Z"/></svg>Analysis Planning</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"></path></svg>Metric Build</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M168,128a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,128Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16ZM216,40V200a32,32,0,0,1-32,32H72a32,32,0,0,1-32-32V40a8,8,0,0,1,8-8H72V24a8,8,0,0,1,16,0v8h32V24a8,8,0,0,1,16,0v8h32V24a8,8,0,0,1,16,0v8h24A8,8,0,0,1,216,40Zm-16,8H184v8a8,8,0,0,1-16,0V48H136v8a8,8,0,0,1-16,0V48H88v8a8,8,0,0,1-16,0V48H56V200a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16Z"/></svg>Analysis Planning</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"></path></svg>Metric Build</span>
+              <span class="agent-card-tag ghost"></span>
+            </div>
+          </div>
+          <div class="agent-tag-row scroll-right">
+            <div class="agent-tag-row-inner">
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M128,24C74.17,24,32,48.6,32,80v96c0,31.4,42.17,56,96,56s96-24.6,96-56V80C224,48.6,181.83,24,128,24Zm80,104c0,9.62-7.88,19.43-21.61,26.92C170.93,163.35,150.19,168,128,168s-42.93-4.65-58.39-13.08C55.88,147.43,48,137.62,48,128V111.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64ZM69.61,53.08C85.07,44.65,105.81,40,128,40s42.93,4.65,58.39,13.08C200.12,60.57,208,70.38,208,80s-7.88,19.43-21.61,26.92C170.93,115.35,150.19,120,128,120s-42.93-4.65-58.39-13.08C55.88,99.43,48,89.62,48,80S55.88,60.57,69.61,53.08ZM186.39,202.92C170.93,211.35,150.19,216,128,216s-42.93-4.65-58.39-13.08C55.88,195.43,48,185.62,48,176V159.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64V176C208,185.62,200.12,195.43,186.39,202.92Z"></path></svg>Custom Data Models</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg>Dashboards</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M128,24C74.17,24,32,48.6,32,80v96c0,31.4,42.17,56,96,56s96-24.6,96-56V80C224,48.6,181.83,24,128,24Zm80,104c0,9.62-7.88,19.43-21.61,26.92C170.93,163.35,150.19,168,128,168s-42.93-4.65-58.39-13.08C55.88,147.43,48,137.62,48,128V111.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64ZM69.61,53.08C85.07,44.65,105.81,40,128,40s42.93,4.65,58.39,13.08C200.12,60.57,208,70.38,208,80s-7.88,19.43-21.61,26.92C170.93,115.35,150.19,120,128,120s-42.93-4.65-58.39-13.08C55.88,99.43,48,89.62,48,80S55.88,60.57,69.61,53.08ZM186.39,202.92C170.93,211.35,150.19,216,128,216s-42.93-4.65-58.39-13.08C55.88,195.43,48,185.62,48,176V159.36c17.06,15,46.23,24.64,80,24.64s62.94-9.68,80-24.64V176C208,185.62,200.12,195.43,186.39,202.92Z"></path></svg>Custom Data Models</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg>Dashboards</span>
+              <span class="agent-card-tag ghost"></span>
+            </div>
+          </div>
+          <div class="agent-tag-row scroll-left">
+            <div class="agent-tag-row-inner">
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Data Lineage</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Data Lineage</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Data Lineage</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Data Lineage</span>
+              <span class="agent-card-tag ghost"></span>
+            </div>
+          </div>
+        </div>
+        <a href="#metrics-agent" class="agent-card-link">See the Metrics Agent <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69l-58.35-58.34a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></a>
+      </div>
+      <div class="agent-intro-card sage">
+        <div class="agent-card-icon"><img src="assets/icon-sage.svg" alt="Sage" width="32" height="32"></div>
+        <div class="agent-card-header">
+          <h3 class="agent-card-name">Sage</h3>
+          <h4 class="agent-card-subtitle">The analyst that measures, investigates, and recommends</h4>
+        </div>
+        <p>Runs on top of your custom metrics 24/7 — monitoring for anomalies, diagnosing root causes, and delivering clear recommendations before you think to ask. And when you do have a question, ask Sage directly and get a thorough, verified answer on demand. Available as a Marketing Analyst or Revenue Analyst.</p>
+        <div class="agent-card-tags">
+          <div class="agent-tag-row scroll-left">
+            <div class="agent-tag-row-inner">
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>Continuous Monitoring</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"></path></svg>On-Demand Answers</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>Continuous Monitoring</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"></path></svg>On-Demand Answers</span>
+              <span class="agent-card-tag ghost"></span>
+            </div>
+          </div>
+          <div class="agent-tag-row scroll-right">
+            <div class="agent-tag-row-inner">
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>Root Cause Analysis</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"></path></svg>Proactive Recommendations</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>Root Cause Analysis</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757a97" viewBox="0 0 256 256"><path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"></path></svg>Proactive Recommendations</span>
+              <span class="agent-card-tag ghost"></span>
+            </div>
+          </div>
+          <div class="agent-tag-row scroll-left">
+            <div class="agent-tag-row-inner">
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Anomaly Detection</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Anomaly Detection</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Anomaly Detection</span>
+              <span class="agent-card-tag ghost"></span>
+              <span class="agent-card-tag"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#757A97" viewBox="0 0 256 256"><path d="M228.54,86.66l-176.06-54A16,16,0,0,0,32,48V192a16,16,0,0,0,16,16,16,16,0,0,0,4.52-.65L136,181.73V192a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16v-29.9l28.54-8.75A16.09,16.09,0,0,0,240,138V102A16.09,16.09,0,0,0,228.54,86.66ZM136,165,48,192V48l88,27Zm48,27H152V176.82L184,167Zm40-54-.11,0L152,160.08V79.92l71.89,22,.11,0v36Z"/></svg>Anomaly Detection</span>
+              <span class="agent-card-tag ghost"></span>
+            </div>
+          </div>
+        </div>
+        <a href="#sage" class="agent-card-link">Meet Sage <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69l-58.35-58.34a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></a>
+      </div>
+    </div>
+  </div>
+  </div></div>
+</section>
+
+<!-- SECTION 5B: METRICS AGENT -->
+<section class="metrics-agent-section" id="metrics-agent">
+  <div class="padding-global"><div class="container-large">
+  <div class="section-label">Metrics Agent</div>
+  <h2 class="section-heading" style="margin-bottom: 16px;"><span style="color: var(--color-primary-500);">Custom metrics in minutes.</span><br>No SQL. No waiting.</h2>
+  <p class="section-sub" style="margin-bottom: 64px;">Deeply trained on GTM data and measurement needs. Builds verified, reusable metrics for your most important Marketing and Revenue use cases — fast. You stay in control. The agent does the work.</p>
+
+  <div class="metrics-intro-block">
+    <h3>The customization power of code.<br>The speed of agents.</h3>
+    <p>Most tools give you out-of-the-box metrics you can't touch. Petavue's power is in how deep you can go. The Metrics Agent works on top of your prompt — building custom metrics that are fully adapted to your data model, your field names, your business logic.</p>
+    <p>It maintains full data lineage at every step, so every consumer on your team can see exactly how a metric was built — from source to output. No black boxes. No trust issues.</p>
+  </div>
+
+  <div class="feature-tabs-wrapper">
+    <div class="feature-tabs-layout">
+      <div class="feature-accordion">
+        <!-- Accordion 1: Analysis Planning -->
+        <div class="feature-accordion-item active" data-panel="tab-planning">
+          <button class="feature-accordion-trigger">
+            <span class="feature-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256"><path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V200H224A8,8,0,0,1,232,208ZM132,160a12,12,0,1,0-12-12A12,12,0,0,0,132,160Zm-24-56A12,12,0,1,0,96,92,12,12,0,0,0,108,104ZM76,176a12,12,0,1,0-12-12A12,12,0,0,0,76,176Zm96-48a12,12,0,1,0-12-12A12,12,0,0,0,172,128Zm24-40a12,12,0,1,0-12-12A12,12,0,0,0,196,88Zm-20,76a12,12,0,1,0,12-12A12,12,0,0,0,176,164Z"></path></svg></span>
+            <span class="feature-accordion-title">A full analysis plan before a single query runs</span>
+          </button>
+          <div class="feature-accordion-body">
+            <p>Tell the agent what you need in plain English. It maps out the full analysis plan — logic, data sources, assumptions — and presents it for your review before anything executes.</p>
+            <p>Revise it, refine it, approve it. Your intent is stored so institutional knowledge never walks out the door when a team member does.</p>
+          </div>
+        </div>
+        <!-- Accordion 2: Metric Build -->
+        <div class="feature-accordion-item" data-panel="tab-metric-build">
+          <button class="feature-accordion-trigger">
+            <span class="feature-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256"><path d="M96,104a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H104A8,8,0,0,1,96,104Zm8,40h64a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16Zm128,48a32,32,0,0,1-32,32H88a32,32,0,0,1-32-32V64a16,16,0,0,0-32,0c0,5.74,4.83,9.62,4.88,9.66h0A8,8,0,0,1,24,88a7.89,7.89,0,0,1-4.79-1.61h0C18.05,85.54,8,77.61,8,64A32,32,0,0,1,40,32H176a32,32,0,0,1,32,32V168h8a8,8,0,0,1,4.8,1.6C222,170.46,232,178.39,232,192ZM96.26,173.48A8.07,8.07,0,0,1,104,168h88V64a16,16,0,0,0-16-16H67.69A31.71,31.71,0,0,1,72,64V192a16,16,0,0,0,32,0c0-5.74-4.83-9.62-4.88-9.66A7.82,7.82,0,0,1,96.26,173.48ZM216,192a12.58,12.58,0,0,0-3.23-8h-94a26.92,26.92,0,0,1,1.21,8,31.82,31.82,0,0,1-4.29,16H200A16,16,0,0,0,216,192Z"></path></svg></span>
+            <span class="feature-accordion-title">Verified metrics — explainable from source to output</span>
+          </button>
+          <div class="feature-accordion-body">
+            <p>The agent writes the code, runs the query, and shows you the results for verification before the metric is saved. No SQL knowledge needed. No engineering ticket required.</p>
+            <p>Catches double-counting, bad date ranges, and circular logic automatically. Every metric carries full lineage — every consumer on your team can see exactly how it was built.</p>
+          </div>
+        </div>
+        <!-- Accordion 3: Dashboards -->
+        <div class="feature-accordion-item" data-panel="tab-dashboards">
+          <button class="feature-accordion-trigger">
+            <span class="feature-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></span>
+            <span class="feature-accordion-title">Describe what you need. The agent builds it.</span>
+          </button>
+          <div class="feature-accordion-body">
+            <p>Custom charts, executive-ready dashboards, views sliced by any dimension your business cares about. No tooling skills required.</p>
+            <p>Just tell the agent what your audience needs — and it assembles a dashboard built on verified, up-to-date numbers. Always current. Always defensible.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-tabs-demo">
+        <div class="feature-tab-demo-wrap active" id="ma-demo-wrap-planning">
+          <iframe class="feature-tab-demo-iframe" id="ma-iframe-planning"
+            src="Use Cases Demo/Multi Touch Attribution/demo-engine.html"
+            scrolling="no" title="Analysis Planning demo"></iframe>
+        </div>
+        <div class="feature-tab-demo-wrap" id="ma-demo-wrap-metric">
+          <iframe class="feature-tab-demo-iframe" id="ma-iframe-metric"
+            src="Use Cases Demo/Lead Conversion Velocity/demo-engine.html"
+            scrolling="no" title="Metric Build demo"></iframe>
+        </div>
+        <div class="feature-tab-demo-wrap" id="ma-demo-wrap-dashboards">
+          <iframe class="feature-tab-demo-iframe" id="ma-iframe-dashboards"
+            src="Use Cases Demo/Pipeline and Forecast/demo-engine.html"
+            scrolling="no" title="Dashboards demo"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="template-strip">
+    <div class="template-strip-icon"><svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="#90A6EE" viewBox="0 0 256 256"><path d="M213.85,125.46l-112,120a8,8,0,0,1-13.69-7l14.66-73.33L45.19,143.49a8,8,0,0,1-3-13l112-120a8,8,0,0,1,13.69,7L153.18,90.9l57.63,21.61a8,8,0,0,1,3,12.95Z" opacity="0.2"></path><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg></div>
+    <div class="template-strip-content">
+      <div class="template-strip-text">
+        <h3><span style="color: var(--color-primary-300);">Get started instantly with</span> GTM-ready templates</h3>
+        <p>An ever-expanding library of templated prompts for the most important Marketing and Revenue use cases. Pick a template, adapt it to your business, and have a verified metric in minutes — not days.</p>
+      </div>
+      <div class="template-tags">
+        <span class="template-tag">Multi-Touch Attribution</span>
+        <span class="template-tag">Pipeline Velocity</span>
+        <span class="template-tag">Marketing Influenced Revenue</span>
+        <span class="template-tag">Funnel Conversion</span>
+        <span class="template-tag">Customer Acquisition Cost</span>
+        <span class="template-tag">Lead Pacing</span>
+        <span class="template-tag">Deal Health Score</span>
+        <span class="template-tag">Win/Loss Analysis</span>
+        <span class="template-tag">Forecast Accuracy</span>
+        <span class="template-tag">Return on Ad Spend</span>
+        <span class="template-tag">+ more</span>
+      </div>
+    </div>
+  </div>
+  </div></div>
+</section>
+
+<!-- SECTION 6: SAGE -->
+<section class="sage-section" id="sage">
+  <div class="padding-global"><div class="container-large">
+  <div class="sage-intro">
+    <div class="sage-intro-text">
+      <span class="section-label">Meet Sage</span>
+      <h2>The analyst that <em>lives in your data</em></h2>
+      <p>Once your metrics are defined, Sage takes over. Sage is an AI analyst that understands your GTM metrics, investigates with verification built in, and delivers answers you can defend — 24/7, without waiting on anyone.</p>
+      <p>Sage works in two modes. In the background, it monitors your metrics continuously — surfacing anomalies, diagnosing root causes, and delivering proactive recommendations before you think to ask. And when you have a question, ask Sage directly and get a thorough, verified answer on demand. No waiting. No ticket. Just answers.</p>
+    </div>
+
+    <div class="sage-example-block">
+    <div class="sage-chat-user">
+      <div class="sage-chat-bubble">"Why did demo request conversions drop last week?"</div>
+    </div>
+    <div class="sage-chat-assistant">
+      <div class="sage-chat-avatar">
+        <img src="assets/sage-logo.svg" alt="Sage" width="18" height="18">
+      </div>
+      <div class="sage-chat-response">Drop concentrated in paid search traffic, down 32% from Feb 6th. Correlates with a new 'Company Size' form field added Feb 5th — form abandonment jumped from 18% to 41%. Organic and referral traffic unaffected. Here's the pipeline impact...</div>
+    </div>
+  </div>
+  </div>
+
+  </div></div>
+</section>
+
+<section class="sage-domain-section">
+  <div class="padding-global"><div class="container-large">
+
+  <div class="sage-agents-heading">
+    <span class="sage-sub-label">Domain Specializations</span>
+    <h3>Trained to think the way your domain works</h3>
+  </div>
+
+  <div class="sage-agents-grid">
+    <div class="sage-agent-card marketing">
+      <div class="sage-agent-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3661ed" viewBox="0 0 256 256"><path d="M240,120a40,40,0,0,1-40,40H160V80h40A40,40,0,0,1,240,120Z" opacity="0.2"></path><path d="M248,120a48.05,48.05,0,0,0-48-48H160.2c-2.91-.17-53.62-3.74-101.91-44.24A16,16,0,0,0,32,40V200a16,16,0,0,0,26.29,12.25c37.77-31.68,77-40.76,93.71-43.3v31.72A16,16,0,0,0,159.12,214l11,7.33A16,16,0,0,0,194.5,212l11.77-44.36A48.07,48.07,0,0,0,248,120ZM48,199.93V40h0c42.81,35.91,86.63,45,104,47.24v65.48C134.65,155,90.84,164.07,48,199.93Zm131,8,0,.11-11-7.33V168h21.6ZM200,152H168V88h32a32,32,0,1,1,0,64Z"></path></svg></div>
+      <div class="sage-agent-header">
+        <h3 class="sage-agent-name">Sage Marketing Analyst</h3>
+        <h4>Not just what changed — but what caused it, and what to do next</h4>
+      </div>
+      <p class="agent-desc">Describe what you want to measure in plain English — across multiple sources. The Metrics Agent adapts to your custom data model and builds verified metrics without SQL knowledge or engineering tickets. Get from first login to verified metrics in minutes — not weeks.</p>
+      <div class="sage-agent-reasons">
+        <p class="sage-agent-knows">How it reasons</p>
+        <ul>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M230.64,49.36a32,32,0,0,0-45.26,0h0a31.9,31.9,0,0,0-5.16,6.76L152,48.42A32,32,0,0,0,97.37,25.36h0a32.06,32.06,0,0,0-5.76,37.41L57.67,93.32a32.05,32.05,0,0,0-40.31,4.05h0a32,32,0,0,0,42.89,47.41l70,51.36a32,32,0,1,0,47.57-14.69l27.39-77.59q1.38.12,2.76.12a32,32,0,0,0,22.63-54.62Zm-122-12.69h0a16,16,0,1,1,0,22.64A16,16,0,0,1,108.68,36.67Zm-80,94.65a16,16,0,0,1,0-22.64h0a16,16,0,1,1,0,22.64Zm142.65,88a16,16,0,0,1-22.63-22.63h0a16,16,0,1,1,22.63,22.63Zm-8.55-43.18a32,32,0,0,0-23,7.08l-70-51.36a32.17,32.17,0,0,0-1.34-26.65l33.95-30.55a32,32,0,0,0,45.47-10.81L176,71.56a32,32,0,0,0,14.12,27Zm56.56-92.84A16,16,0,1,1,196.7,60.68h0a16,16,0,0,1,22.63,22.63Z"></path></svg> Correlates channel performance with pipeline outcomes downstream</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M232,120h-8.34A96.14,96.14,0,0,0,136,32.34V24a8,8,0,0,0-16,0v8.34A96.14,96.14,0,0,0,32.34,120H24a8,8,0,0,0,0,16h8.34A96.14,96.14,0,0,0,120,223.66V232a8,8,0,0,0,16,0v-8.34A96.14,96.14,0,0,0,223.66,136H232a8,8,0,0,0,0-16Zm-96,87.6V200a8,8,0,0,0-16,0v7.6A80.15,80.15,0,0,1,48.4,136H56a8,8,0,0,0,0-16H48.4A80.15,80.15,0,0,1,120,48.4V56a8,8,0,0,0,16,0V48.4A80.15,80.15,0,0,1,207.6,120H200a8,8,0,0,0,0,16h7.6A80.15,80.15,0,0,1,136,207.6ZM128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152Z"></path></svg> Identifies which campaigns are driving qualified pipeline vs. vanity volume</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg> Diagnoses conversion drops by isolating the variable that changed</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M88,104H40a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V76.69L62.63,62.06A95.43,95.43,0,0,1,130,33.94h.53a95.36,95.36,0,0,1,67.07,27.33,8,8,0,0,1-11.18,11.44,79.52,79.52,0,0,0-55.89-22.77h-.45A79.56,79.56,0,0,0,73.94,73.37L59.31,88H88a8,8,0,0,1,0,16Zm128,48H168a8,8,0,0,0,0,16h28.69l-14.63,14.63a79.56,79.56,0,0,1-56.13,23.43h-.45a79.52,79.52,0,0,1-55.89-22.77,8,8,0,1,0-11.18,11.44,95.36,95.36,0,0,0,67.07,27.33H126a95.43,95.43,0,0,0,67.36-28.12L208,179.31V208a8,8,0,0,0,16,0V160A8,8,0,0,0,216,152Z"></path></svg> Surfaces spend reallocation recommendations when efficiency shifts</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"></path></svg> Flags lead pacing risk early — with a recommended response, not just an alert</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sage-agent-card revenue">
+      <div class="sage-agent-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3661ed" viewBox="0 0 256 256"><path d="M221.9,61.38,152,136v58.65a8,8,0,0,1-3.56,6.66l-32,21.33A8,8,0,0,1,104,216V136L34.1,61.38A8,8,0,0,1,40,48H216A8,8,0,0,1,221.9,61.38Z" opacity="0.2"></path><path d="M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z"></path></svg></div>
+      <div class="sage-agent-header">
+        <h3 class="sage-agent-name">Sage Revenue Analyst</h3>
+        <h4>Diagnose pipeline risk — and surface the action before the window closes</h4>
+      </div>
+      <p class="agent-desc">Runs on top of your custom metrics 24/7 — monitoring for anomalies, diagnosing root causes, and delivering clear recommendations before you think to ask. And when you do have a question, ask Sage directly and get a thorough, verified answer on demand. Available as a Marketing Analyst or Revenue Analyst.</p>
+      <div class="sage-agent-reasons">
+        <p class="sage-agent-knows">How it reasons</p>
+        <ul>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M230.64,49.36a32,32,0,0,0-45.26,0h0a31.9,31.9,0,0,0-5.16,6.76L152,48.42A32,32,0,0,0,97.37,25.36h0a32.06,32.06,0,0,0-5.76,37.41L57.67,93.32a32.05,32.05,0,0,0-40.31,4.05h0a32,32,0,0,0,42.89,47.41l70,51.36a32,32,0,1,0,47.57-14.69l27.39-77.59q1.38.12,2.76.12a32,32,0,0,0,22.63-54.62Zm-122-12.69h0a16,16,0,1,1,0,22.64A16,16,0,0,1,108.68,36.67Zm-80,94.65a16,16,0,0,1,0-22.64h0a16,16,0,1,1,0,22.64Zm142.65,88a16,16,0,0,1-22.63-22.63h0a16,16,0,1,1,22.63,22.63Zm-8.55-43.18a32,32,0,0,0-23,7.08l-70-51.36a32.17,32.17,0,0,0-1.34-26.65l33.95-30.55a32,32,0,0,0,45.47-10.81L176,71.56a32,32,0,0,0,14.12,27Zm56.56-92.84A16,16,0,1,1,196.7,60.68h0a16,16,0,0,1,22.63,22.63Z"></path></svg> Correlates deal velocity trends with forecast risk before it's too late</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M232,120h-8.34A96.14,96.14,0,0,0,136,32.34V24a8,8,0,0,0-16,0v8.34A96.14,96.14,0,0,0,32.34,120H24a8,8,0,0,0,0,16h8.34A96.14,96.14,0,0,0,120,223.66V232a8,8,0,0,0,16,0v-8.34A96.14,96.14,0,0,0,223.66,136H232a8,8,0,0,0,0-16Zm-96,87.6V200a8,8,0,0,0-16,0v7.6A80.15,80.15,0,0,1,48.4,136H56a8,8,0,0,0,0-16H48.4A80.15,80.15,0,0,1,120,48.4V56a8,8,0,0,0,16,0V48.4A80.15,80.15,0,0,1,207.6,120H200a8,8,0,0,0,0,16h7.6A80.15,80.15,0,0,1,136,207.6ZM128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152Z"></path></svg> Identifies which segments or reps are driving conversion vs. drag</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg> Diagnoses win/loss patterns to surface what's working in your best deals</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M88,104H40a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V76.69L62.63,62.06A95.43,95.43,0,0,1,130,33.94h.53a95.36,95.36,0,0,1,67.07,27.33,8,8,0,0,1-11.18,11.44,79.52,79.52,0,0,0-55.89-22.77h-.45A79.56,79.56,0,0,0,73.94,73.37L59.31,88H88a8,8,0,0,1,0,16Zm128,48H168a8,8,0,0,0,0,16h28.69l-14.63,14.63a79.56,79.56,0,0,1-56.13,23.43h-.45a79.52,79.52,0,0,1-55.89-22.77,8,8,0,1,0-11.18,11.44,95.36,95.36,0,0,0,67.07,27.33H126a95.43,95.43,0,0,0,67.36-28.12L208,179.31V208a8,8,0,0,0,16,0V160A8,8,0,0,0,216,152Z"></path></svg> Flags at-risk pipeline with a specific intervention recommendation</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#52577a" viewBox="0 0 256 256"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"></path></svg> Delivers pre-forecast summaries with a clear view of what needs action</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  </div></div>
+</section>
+
+<!-- SECTION 6B: SAGE PROACTIVE -->
+<section class="sage-proactive-section">
+  <div class="padding-global"><div class="container-large">
+  <div class="sage-proactive-wrap">
+    <div class="section-label" style="margin-bottom: 12px;">Sage runs proactively too</div>
+    <h2 class="section-heading" style="font-size: 48px; margin-bottom: 24px; color: var(--color-primary-300);"><span style="color: #fff;">Sage</span> doesn't wait to be asked</h2>
+    <p class="section-sub" style="margin-bottom: 40px; max-width: 800px;">Beyond answering questions on demand, Sage monitors your metrics continuously and delivers the right insights automatically — before you knew to ask.</p>
+    <div class="workflows-grid">
+      <div class="workflow-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3661ed" viewBox="0 0 256 256"><path d="M232,120h-8.34A96.14,96.14,0,0,0,136,32.34V24a8,8,0,0,0-16,0v8.34A96.14,96.14,0,0,0,32.34,120H24a8,8,0,0,0,0,16h8.34A96.14,96.14,0,0,0,120,223.66V232a8,8,0,0,0,16,0v-8.34A96.14,96.14,0,0,0,223.66,136H232a8,8,0,0,0,0-16Zm-96,87.6V200a8,8,0,0,0-16,0v7.6A80.15,80.15,0,0,1,48.4,136H56a8,8,0,0,0,0-16H48.4A80.15,80.15,0,0,1,120,48.4V56a8,8,0,0,0,16,0V48.4A80.15,80.15,0,0,1,207.6,120H200a8,8,0,0,0,0,16h7.6A80.15,80.15,0,0,1,136,207.6ZM128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152Z"></path></svg>
+        <h4>Scheduled Analysis</h4>
+        <p>Configure Sage to run daily, weekly, or monthly analyses automatically. Every Monday at 9am, your lead pacing analysis is waiting in Slack with full context and verified insights — before your standup even starts.</p>
+      </div>
+      <div class="workflow-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3661ed" viewBox="0 0 256 256"><path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"></path></svg>
+        <h4>Personalized Summaries</h4>
+        <p>Sage learns what matters to your role and delivers personalized insights tailored to your priorities. Marketing gets campaign performance and conversion trends. RevOps gets pipeline health and velocity signals.</p>
+      </div>
+      <div class="workflow-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3661ed" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+        <h4>Continuous Monitoring</h4>
+        <p>Sage works 24/7, watching your metrics for anomalies and blind spots. When patterns break or hidden risks emerge, you're notified with complete investigation and verified root cause — not just raw data.</p>
+      </div>
+      <div class="workflow-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,200h-8V40a8,8,0,0,0-8-8H152a8,8,0,0,0-8,8V80H96a8,8,0,0,0-8,8v40H48a8,8,0,0,0-8,8v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16ZM160,48h40V200H160ZM104,96h40V200H104ZM56,144H88v56H56Z"></path></svg>
+        <h4>Pre-Meeting Prep</h4>
+        <p>48 hours before your board meeting or QBR, Sage validates all metrics in your deck, runs full audits across data sources, and flags potential questions with verified answers. Walk in confident, every number defensible.</p>
+      </div>
+    </div>
+    <div class="workflows-kicker" style="margin-top: 40px;">
+      <h3 class="problem-headline">The work doesn't stop. <strong>Neither does Sage.</strong></h3>
+      <p class="problem-subtitle">Configure once. Trust continuously. Act immediately.</p>
+    </div>
+  </div>
+  </div></div>
+</section>
+
+<!-- SECTION 8: USE CASES -->
+<section class="use-cases-section" id="use-cases">
+  <div class="padding-global"><div class="container-large">
+  <div class="label-center-wrap"><div class="section-label">Use Cases</div></div>
+  <h2 class="section-heading center-text" style="margin: 0 auto 16px;">What's possible when you have <span style="color: var(--color-primary-500);">verified metrics</span> with depth</h2>
+  <p class="section-sub center-text" style="margin: 0 auto 56px;">Start with the use cases that matter most. Expand as you grow.</p>
+
+  <div class="use-cases-grid">
+    <div class="use-case-category">
+      <h3>Marketing Ops &amp; Growth</h3>
+      <div class="use-case-item">
+        <strong>Campaign Performance Optimization</strong>
+        <p>Unify spend with pipeline data to show true campaign ROI — not just lead volume. Detect patterns across channels. Get budget reallocation recommendations based on verified performance data.</p>
+      </div>
+      <div class="use-case-item">
+        <strong>Lead Quality &amp; Pacing Analysis</strong>
+        <p>Track lead pacing by source and segment with automatic conversion analysis. Investigate when pacing drops. Surface blind spots like "Paid social leads converting 40% lower but getting 60% of budget."</p>
+      </div>
+      <div class="use-case-item">
+        <strong>Multi-Touch Attribution</strong>
+        <p>Map complete account journeys across every touchpoint with verified attribution windows. Show which campaign combinations drive highest conversion.</p>
+      </div>
+    </div>
+    <div class="use-case-category">
+      <h3>Revenue Ops</h3>
+      <div class="use-case-item">
+        <strong>Funnel Diagnostics &amp; Conversion Analysis</strong>
+        <p>Automatically diagnose conversion drops across every dimension — segment, rep, deal size. Investigate root cause with verified data. Understand impact on pipeline coverage.</p>
+      </div>
+      <div class="use-case-item">
+        <strong>Deal Health &amp; Velocity Monitoring</strong>
+        <p>Track time-in-stage for every active deal against benchmarks. Get early warning signals while you can intervene. Receive prioritized intervention lists.</p>
+      </div>
+      <div class="use-case-item">
+        <strong>Sales Process &amp; Rep Efficiency</strong>
+        <p>Monitor whether reps follow required sales stages, identify where deals stall, measure rep productivity against benchmarks, and surface which behaviors correlate with higher win rates.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-use-cases">
+    <div class="custom-intro">
+      <h3>Or build something completely different</h3>
+      <p>The metrics that keep you up at night. The analysis your CEO asks for. The workflow that would save your team 10 hours a week.</p>
+      <p class="use-cases-cta">Your business is unique. Your metrics should be too.</p>
+    </div>
+    <ul>
+      <li>Account engagement scoring tied to product usage</li>
+      <li>Territory performance with coaching triggers</li>
+      <li>Channel mix optimization across 18-month trends</li>
+      <li>Win/loss analysis with competitive intelligence</li>
+      <li>Pipeline generation efficiency by program type</li>
+      <li>Custom cohort analysis matching your ICP</li>
+      <li>Leading indicator tracking for retention</li>
+      <li>Any metric your team needs — built in minutes</li>
+    </ul>
+  </div>
+  </div></div>
+</section>
+
+<!-- SECTION 9: HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="padding-global"><div class="container-large">
+  <div class="label-center-wrap"><div class="section-label">How It Works</div></div>
+  <h2 class="section-heading center-text" style="margin: 0 auto 16px;">Build your metrics model and put analysis on auto-pilot — within a day</h2>
+  <p class="section-sub center-text" style="margin: 0 auto 64px;">Not a months-long implementation. Not an ETL project. A structured process that gets your first verified metric live in hours and your analysis running automatically by end of day.</p>
+
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-timeline">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h4>Connect your data — no ETL required</h4>
+        <p>Connect to your tools — Salesforce, HubSpot, Google Ads, Marketo, LinkedIn, Outreach, and more. Agents immediately begin unifying data and validating quality across sources.</p>
+        <div class="step-highlight"><strong>The great news:</strong> Petavue reasons over raw data. No transformation pipelines to build. No data engineering tickets to file. Connect your sources and start — agents work with your data as it exists today.</div>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-timeline">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h4>Define your metrics — no SQL, no code</h4>
+        <p>Tell the Metrics Agent what you need in plain English, or start from a GTM template. The agent generates a detailed analysis plan for you to review, modify, and approve before anything runs.</p>
+        <p>It adapts to your data model — your field names, your custom objects, your business logic. No forcing your data into rigid templates. Every definition is stored and reusable.</p>
+        <div class="step-highlight"><strong>What you get:</strong> A verified metric you can defend, not a number you hope is right. Institutional knowledge preserved — not lost when someone leaves.</div>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-timeline">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h4>Deploy Sage — agents take over</h4>
+        <p>Once your metrics are defined, Sage runs on top of them automatically. Monitoring, investigating anomalies, diagnosing root causes, and delivering verified insights — without you having to ask.</p>
+        <p>While you focus on strategy, agents do the work you'd typically spend hours on — or hire consultants to do — with verification and depth at every step.</p>
+        <div class="step-highlight"><strong>The work doesn't go away. Who does it does.</strong> Agents work 24/7 — not monthly, not when you have time. Continuously.</div>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-timeline">
+        <div class="step-num">4</div>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h4>Activate workflows — insights delivered automatically</h4>
+        <p>Configure agents to deliver the right insights to the right people, on your schedule. Weekly pipeline reviews in Slack. Board deck metrics auto-populated. QBR prep done 48 hours before you walk in.</p>
+        <div class="step-highlight">All of this is done manually today — copying numbers into decks, validating metrics before meetings, emailing screenshots of dashboards. <strong>Agents replace that work entirely, with verified outputs delivered on schedule.</strong></div>
+      </div>
+    </div>
+  </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Brand column -->
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <img src="assets/petavue-icon.svg" alt="Petavue">
+      </a>
+      <p class="footer-tagline">Trusted metrics. Explainable insights. Aligned teams.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/petavue" target="_blank" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Links columns -->
+    <div class="footer-links">
+      <!-- Resources -->
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <a href="https://www.petavue.com/real-world" class="footer-link-new">
+          <span>Real World Impact</span>
+          <span class="badge-new">New</span>
+        </a>
+        <a href="https://www.petavue.com/resources/glossary">KPI Glossary</a>
+        <a href="https://www.petavue.com/resources/prompts">GTM Prompt Library</a>
+        <a href="https://www.petavue.com/resources/ai-agent-playbook/overview">AI Agents Playbook</a>
+        <a href="https://www.petavue.com/blog">Blog</a>
+        <a href="https://www.petavue.com/help">Help Center</a>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="https://www.petavue.com/security">Security</a>
+        <a href="https://www.petavue.com/our-story">Our Story</a>
+        <a href="https://www.petavue.com/book-a-demo">Contact</a>
+      </div>
+
+      <!-- Get in Touch -->
+      <div class="footer-col">
+        <div class="footer-col-title">Get in Touch</div>
+        <div class="footer-contact-group">
+          <span class="footer-contact-label">Sales</span>
+          <a href="mailto:sales@petavue.com">sales@petavue.com</a>
+        </div>
+        <div class="footer-contact-group">
+          <span class="footer-contact-label">Support</span>
+          <a href="mailto:support@petavue.com">support@petavue.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-links">
+      <a href="https://www.petavue.com/privacy-policy">Privacy Policy</a>
+      <a href="https://www.petavue.com/terms-and-conditions">Terms & Conditions</a>
+      <a href="https://www.petavue.com/privacy/subprocessors">Sub-processors</a>
+    </div>
+    <div class="footer-copyright">© 2026 Petavue. All rights reserved.</div>
+  </div>
+
+  <!-- Large watermark -->
+  <div class="footer-watermark">
+    <img src="assets/petavue-watermark.svg" alt="">
+  </div>
+</footer>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
