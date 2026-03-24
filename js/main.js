@@ -57,33 +57,55 @@
   });
 })();
 
-// Feature accordion
+// Feature accordion with auto-timer
 (function() {
-  var items = document.querySelectorAll('.feature-accordion-item');
+  var items = Array.from(document.querySelectorAll('.feature-accordion-item'));
   var demoWraps = document.querySelectorAll('.feature-tabs-demo .feature-tab-demo-wrap');
+  if (!items.length) return;
 
-  items.forEach(function(item) {
+  var demoMap = { 'tab-planning': 'ma-demo-wrap-planning', 'tab-metric-build': 'ma-demo-wrap-metric', 'tab-dashboards': 'ma-demo-wrap-dashboards' };
+  var currentIndex = 0;
+  var autoTimer = null;
+  var INTERVAL = 8000;
+
+  function activateItem(index) {
+    items.forEach(function(i) { i.classList.remove('active'); });
+    demoWraps.forEach(function(d) { d.classList.remove('active'); });
+
+    items[index].classList.add('active');
+    currentIndex = index;
+
+    var panelId = items[index].getAttribute('data-panel');
+    var targetDemo = document.getElementById(demoMap[panelId]);
+    if (targetDemo) {
+      targetDemo.classList.add('active');
+      var iframeEl = targetDemo.querySelector('.feature-tab-demo-iframe');
+      if (iframeEl) scaleMaIframe(targetDemo.id, iframeEl.id);
+    }
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoTimer = setInterval(function() {
+      var next = (currentIndex + 1) % items.length;
+      activateItem(next);
+    }, INTERVAL);
+  }
+
+  function stopAutoPlay() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
+
+  items.forEach(function(item, i) {
     item.querySelector('.feature-accordion-trigger').addEventListener('click', function() {
-      var panelId = item.getAttribute('data-panel');
-
-      // Deactivate all
-      items.forEach(function(i) { i.classList.remove('active'); });
-      demoWraps.forEach(function(d) { d.classList.remove('active'); });
-
-      // Activate clicked
-      item.classList.add('active');
-      var demoMap = { 'tab-planning': 'ma-demo-wrap-planning', 'tab-metric-build': 'ma-demo-wrap-metric', 'tab-dashboards': 'ma-demo-wrap-dashboards' };
-      var targetDemo = document.getElementById(demoMap[panelId]);
-      if (targetDemo) {
-        targetDemo.classList.add('active');
-        // Re-scale iframe
-        var iframeId = targetDemo.querySelector('.feature-tab-demo-iframe');
-        if (iframeId) {
-          scaleMaIframe(targetDemo.id, iframeId.id);
-        }
-      }
+      activateItem(i);
+      startAutoPlay();
     });
   });
+
+  // Start auto-play
+  activateItem(0);
+  startAutoPlay();
 })();
 
   // ── Metrics Agent iframe scaling ──
