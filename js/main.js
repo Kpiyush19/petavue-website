@@ -108,6 +108,121 @@
   // Also scale once DOM is ready (before full load)
   document.addEventListener('DOMContentLoaded', scaleAllMaIframes);
 
+// Persona recommendation tabs
+function updatePersonaTabIndicator() {
+  var wrap = document.querySelector('.persona-tabs-wrap');
+  var active = wrap && wrap.querySelector('.p-tab.active');
+  if (!wrap || !active) return;
+  var wrapRect = wrap.getBoundingClientRect();
+  var tabRect = active.getBoundingClientRect();
+  var scrollOffset = wrap.scrollLeft;
+  wrap.style.setProperty('--ptab-active-width', tabRect.width + 'px');
+  wrap.style.setProperty('--ptab-active-x', (tabRect.left - wrapRect.left + scrollOffset) + 'px');
+}
+
+function switchPersonaTab(persona, btn) {
+  document.querySelectorAll('.p-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.p-panel').forEach(function(p) { p.classList.remove('active'); });
+  btn.classList.add('active');
+  var panel = document.getElementById('pp-' + persona);
+  panel.classList.add('active');
+  updatePersonaTabIndicator();
+  // Reset skill subtabs to ROAS and update carousel arrows
+  var firstSkillTab = panel.querySelector('.skill-subtab');
+  if (firstSkillTab) switchSkillTab(firstSkillTab);
+  // Update carousel arrow states for newly visible panel
+  panel.querySelectorAll('.recs-grid').forEach(function(grid) {
+    grid.scrollLeft = 0;
+    grid.dispatchEvent(new Event('scroll'));
+  });
+}
+
+// Init persona tab indicator on load
+document.addEventListener('DOMContentLoaded', updatePersonaTabIndicator);
+window.addEventListener('resize', updatePersonaTabIndicator);
+(function() {
+  var wrap = document.querySelector('.persona-tabs-wrap');
+  if (wrap) wrap.addEventListener('scroll', updatePersonaTabIndicator);
+})();
+
+// Rec cards — wrap non-footer content for space-between layout
+(function() {
+  document.querySelectorAll('.rec-card').forEach(function(card) {
+    var footer = card.querySelector('.rec-footer');
+    if (!footer) return;
+    var wrapper = document.createElement('div');
+    wrapper.className = 'rec-card-content';
+    while (card.firstChild && card.firstChild !== footer) {
+      wrapper.appendChild(card.firstChild);
+    }
+    card.insertBefore(wrapper, footer);
+  });
+})();
+
+// Recs carousel — wrap grids and inject nav arrows
+(function() {
+  document.querySelectorAll('.recs-grid').forEach(function(grid) {
+    var wrapper = document.createElement('div');
+    wrapper.className = 'recs-carousel';
+    grid.parentNode.insertBefore(wrapper, grid);
+    wrapper.appendChild(grid);
+
+    var nav = document.createElement('div');
+    nav.className = 'recs-nav';
+    nav.innerHTML = '<button class="recs-arrow recs-prev" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button><button class="recs-arrow recs-next" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg></button>';
+    wrapper.appendChild(nav);
+
+    var prevBtn = nav.querySelector('.recs-prev');
+    var nextBtn = nav.querySelector('.recs-next');
+
+    function getCardWidth() {
+      var card = grid.querySelector('.rec-card');
+      if (!card) return 300;
+      return card.offsetWidth + 14;
+    }
+
+    function updateArrows() {
+      prevBtn.disabled = grid.scrollLeft <= 5;
+      nextBtn.disabled = grid.scrollLeft + grid.offsetWidth >= grid.scrollWidth - 5;
+    }
+
+    prevBtn.addEventListener('click', function() {
+      grid.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', function() {
+      grid.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+    });
+
+    grid.addEventListener('scroll', updateArrows);
+    updateArrows();
+  });
+})();
+
+// Skill sub-tabs within persona panels
+function switchSkillTab(btn) {
+  var panel = btn.closest('.p-panel');
+  var skill = btn.getAttribute('data-skill');
+  panel.querySelectorAll('.skill-subtab').forEach(function(t) { t.classList.remove('active'); });
+  panel.querySelectorAll('.skill-subpanel').forEach(function(p) { p.classList.remove('active'); });
+  btn.classList.add('active');
+  var subpanel = panel.querySelector('.skill-subpanel[data-skill="' + skill + '"]');
+  subpanel.classList.add('active');
+  // Reset and update carousel arrows
+  subpanel.querySelectorAll('.recs-grid').forEach(function(grid) {
+    grid.scrollLeft = 0;
+    grid.dispatchEvent(new Event('scroll'));
+  });
+}
+
+// Custom tags scroll — duplicate content for seamless loop
+(function() {
+  document.querySelectorAll('.custom-tags-col-inner').forEach(function(inner) {
+    var clone = inner.innerHTML;
+    inner.innerHTML += clone;
+  });
+})();
+
+
 // Workflow nodes sequential loop — one active at a time
 (function() {
   var container = document.querySelector('.workflow-map-nodes');
@@ -115,6 +230,7 @@
 
   var nodes = Array.from(container.querySelectorAll('.wf-node'));
   var connectors = Array.from(container.querySelectorAll('.wf-connector'));
+  var descs = Array.from(document.querySelectorAll('.wf-node-desc-wrap .wf-node-desc'));
   var lineDuration = 3000;
   var current = -1;
   var running = false;
@@ -123,6 +239,7 @@
   function clearAll() {
     nodes.forEach(function(n) { n.classList.remove('active'); });
     connectors.forEach(function(c) { c.classList.remove('active'); });
+    descs.forEach(function(d) { d.classList.remove('active'); });
   }
 
   function activateNext() {
@@ -136,6 +253,9 @@
 
     // Activate current node
     nodes[current].classList.add('active');
+
+    // Activate matching description
+    if (descs[current]) descs[current].classList.add('active');
 
     // Flow the connector OUT of this node to the next
     if (current < connectors.length) {
