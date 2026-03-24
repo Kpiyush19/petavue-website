@@ -1209,12 +1209,11 @@
   .footer {
     background: linear-gradient(to bottom, #f8f9fc, #f5f8ff);
     padding: 64px 5% 48px; position: relative; overflow: hidden;
-    width: 100%; max-width: 80rem; height: 100%;
-    margin-left: auto; margin-right: auto;
+    width: 100%;
   }
   .footer-content {
     display: flex; gap: 60px; align-items: flex-start; position: relative; z-index: 1;
-    width: 100%;
+    width: 100%; max-width: 80rem; margin-left: auto; margin-right: auto;
   }
   .footer-brand { flex: 1; }
   .footer-logo { display: flex; align-items: center; gap: 12px; height: 48px; margin-bottom: 8px; text-decoration: none; }
@@ -1257,6 +1256,7 @@
     display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
     justify-content: space-between; padding-top: 32px; margin-top: 24px;
     position: relative; z-index: 1;
+    max-width: 80rem; margin-left: auto; margin-right: auto;
   }
   .footer-bottom-links {
     display: flex; gap: 24px; align-items: flex-start;
