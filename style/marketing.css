@@ -1070,7 +1070,7 @@
 .cap-demo-panel { display: none; }
 .cap-demo-panel.active { display: block; }
 .cap-video-placeholder {
-  width: 100%; aspect-ratio: 4 / 3; background: var(--color-neutral-50);
+  width: 100%; aspect-ratio: 16 / 9; background: var(--color-neutral-50);
   border: 1px solid #e5e5e5; border-radius: 14px; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 12px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.06);
@@ -1408,14 +1408,19 @@
   margin-bottom: 48px !important;
 }
 
-/* Two-column comparison like pricing cards */
+/* Two-column comparison: labels + icon columns wrapper */
 .matrix-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
   max-width: 800px;
   margin: 0 auto;
   align-items: flex-start;
+}
+.matrix-icon-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .matrix-col {
@@ -1451,26 +1456,50 @@
 }
 .matrix-col-features li svg { flex-shrink: 0; margin-top: 1px; }
 
-/* Petavue — white card with shadow */
-.matrix-col-petavue {
-  background: #fff;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+/* Labels column */
+.matrix-col-labels {
+  background: transparent;
 }
-.matrix-col-petavue .matrix-col-features li {
+.matrix-col-labels .matrix-col-features li {
   color: var(--text);
   font-weight: 500;
 }
+.matrix-col-labels .matrix-col-header {
+  visibility: hidden;
+}
 
-/* Generic AI — plain, no card */
+/* Icon-only columns */
+.matrix-col-icons {
+  align-items: center;
+}
+.matrix-col-icons li {
+  justify-content: center;
+}
+
+/* Petavue column */
+.matrix-col-petavue {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  width: 100%;
+}
+.matrix-col-petavue .matrix-col-header {
+  justify-content: center;
+}
+
+/* Generic AI — plain */
 .matrix-col-generic {
   background: transparent;
+  width: 100%;
+}
+.matrix-col-generic .matrix-col-header {
+  justify-content: center;
 }
 .matrix-col-generic .matrix-col-features li {
   color: var(--color-neutral-500);
 }
 
 @media (max-width: 640px) {
-  .matrix-columns { grid-template-columns: 1fr; }
+  .matrix-icon-cols { grid-template-columns: 80px 80px; }
 }
 
 /* --- Runs itself section --- */
@@ -1503,6 +1532,31 @@
   max-width: 700px;
   margin: 0 auto;
 }
+/* Video placeholder above runs cards */
+.runs-video-placeholder {
+  width: 100%;
+  max-width: 964px;
+  aspect-ratio: 964 / 525;
+  background: var(--color-neutral-50);
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 48px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.runs-video-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--color-neutral-500);
+}
+
+/* Hide card scenes */
+.mktg-runs-card .runs-card-scene { display: none; }
+
 .mktg-runs-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
