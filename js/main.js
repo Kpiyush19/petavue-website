@@ -366,4 +366,67 @@ function switchSkillTab(btn) {
 })();
 
 
+// Capabilities panel accordion
+(function() {
+  document.querySelectorAll('.cap-acc-trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      var item = trigger.closest('.cap-acc-item');
+      var accordion = item.closest('.cap-panel-accordion');
+      if (item.classList.contains('is-open')) return;
+      accordion.querySelectorAll('.cap-acc-item').forEach(function(i) { i.classList.remove('is-open'); });
+      item.classList.add('is-open');
+    });
+  });
+})();
+
+// Capabilities tab switching with sliding indicator
+(function() {
+  var strip = document.querySelector('.cap-tabs-strip');
+  var tabs = document.querySelectorAll('.cap-tab');
+  var panels = document.querySelectorAll('.cap-tab-panel');
+  if (!strip || !tabs.length || !panels.length) return;
+
+  function updateIndicator(tab) {
+    var x = tab.offsetLeft;
+    var w = tab.offsetWidth;
+    strip.style.setProperty('--cap-active-x', x + 'px');
+    strip.style.setProperty('--cap-active-width', w + 'px');
+  }
+
+  // Set initial position
+  var activeTab = strip.querySelector('.cap-tab.is-active');
+  if (activeTab) updateIndicator(activeTab);
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.getAttribute('data-cap-tab');
+      tabs.forEach(function(t) { t.classList.remove('is-active'); });
+      panels.forEach(function(p) { p.classList.remove('is-active'); });
+      tab.classList.add('is-active');
+      updateIndicator(tab);
+      var panel = document.querySelector('.cap-tab-panel[data-cap-panel="' + target + '"]');
+      if (panel) panel.classList.add('is-active');
+    });
+  });
+})();
+
+// Hero media scroll reveal — scale + opacity
+(function() {
+  var heroMedia = document.querySelector('.hero-media');
+  if (!heroMedia) return;
+
+  function updateTransform() {
+    var rect = heroMedia.getBoundingClientRect();
+    var windowH = window.innerHeight;
+    var progress = Math.min(Math.max((windowH - rect.top) / (windowH * 0.6), 0), 1);
+    var scale = 0.7 + 0.3 * progress;
+    var opacity = progress;
+    heroMedia.style.transform = 'scale(' + scale + ')';
+    heroMedia.style.opacity = opacity;
+  }
+
+  window.addEventListener('scroll', updateTransform, { passive: true });
+  updateTransform();
+})();
+
 // How-it-works step badges (static — no animation)

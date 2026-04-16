@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="style/colorography.css">
 <link rel="stylesheet" href="style/global.css">
 <link rel="stylesheet" href="style/marketing.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Manrope:wght@300;400;500;600;700&family=Poppins:wght@400;600&family=Roboto+Mono:wght@400;500&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Instrument+Sans:wght@400;500;600;700&family=Poppins:wght@400;600&family=Roboto+Mono:wght@400;500&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -38,12 +38,13 @@
       <a href="https://www.petavue.com/book-a-demo" class="btn-primary">Book a Demo <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" width="16" height="16"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg></a>
       </div>
 
-    <!-- Hero placeholder image -->
-    <div class="hero-media">
-      <div class="hero-media-inner">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V200H40ZM96,120a24,24,0,1,0-24-24A24,24,0,0,0,96,120Zm-1.33,8A33.22,33.22,0,0,0,69.34,144L48,168.31V160H40v40H216V176l-42.67-48A33.22,33.22,0,0,0,148,112a33.22,33.22,0,0,0-25.33,16L96,160,94.67,128Z" fill="#ADB2CE"/></svg>
-        <span class="hero-media-sublabel">Product Video</span>
-      </div>
+  </div>
+  <!-- Hero video -->
+  <div class="hero-media">
+    <div class="hero-media-inner">
+      <video autoplay muted loop playsinline style="width:100%;display:block;object-fit:cover;border-radius:inherit;">
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 
@@ -364,57 +365,154 @@
     <h2 class="section-heading reveal-on-scroll">Everything in one <span style="color: var(--color-primary-500);">place.</span></h2>
     <p class="section-sub reveal-on-scroll">Dashboards that stay current, an AI analyst that works across contexts, and workflows you configure to match how your team operates.</p>
 
-    <!-- Accordion + Demo layout -->
-    <div class="cap-layout">
-      <!-- Left: Accordion -->
-      <div class="cap-accordion">
-        <div class="cap-accordion-item active" data-cap-panel="cap-demo-dashboards">
-          <button class="cap-accordion-trigger">
-            <span class="cap-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></span>
-            <span class="cap-accordion-title">Dashboards</span>
-          </button>
-          <div class="cap-accordion-body">
-            <p>Publish dynamic dashboards that update continuously with your live data. Every metric reflects your definitions — not a system default. Share with your team, stakeholders, or board.</p>
+    <!-- Tab strip -->
+    <div class="cap-tabs-strip">
+      <button class="cap-tab is-active" data-cap-tab="dashboards">
+        <span class="cap-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></span>
+        <span class="cap-tab-label">Dashboards</span>
+      </button>
+      <button class="cap-tab" data-cap-tab="sage">
+        <span class="cap-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"></path></svg></span>
+        <span class="cap-tab-label">Sage Agent</span>
+      </button>
+      <button class="cap-tab" data-cap-tab="workflows">
+        <span class="cap-tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M232,112H136V88h8a16,16,0,0,0,16-16V40a16,16,0,0,0-16-16H112A16,16,0,0,0,96,40V72a16,16,0,0,0,16,16h8v24H24a8,8,0,0,0,0,16H56v32H48a16,16,0,0,0-16,16v32a16,16,0,0,0,16,16H80a16,16,0,0,0,16-16V176a16,16,0,0,0-16-16H72V128H184v32h-8a16,16,0,0,0-16,16v32a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V176a16,16,0,0,0-16-16h-8V128h32a8,8,0,0,0,0-16ZM112,40h32V72H112ZM80,208H48V176H80Zm128,0H176V176h32Z"></path></svg></span>
+        <span class="cap-tab-label">Workflows</span>
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div class="cap-tabs-wrap">
+      <!-- Panel 1: Dashboards -->
+      <div class="cap-tab-panel is-active" data-cap-panel="dashboards">
+        <div class="cap-panel-layout">
+          <div class="cap-panel-left">
+            <h3 class="cap-panel-title">Dashboards</h3>
+            <p class="cap-tab-desc">Publish dynamic dashboards that update continuously with your live data. Every metric reflects your definitions — not a system default.</p>
+            <div class="cap-panel-accordion">
+              <div class="cap-acc-item is-open" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M245,110.64A16,16,0,0,0,232,104H216V88a16,16,0,0,0-16-16H130.67L102.94,51.2a16.14,16.14,0,0,0-9.6-3.2H40A16,16,0,0,0,24,64V208h0a8,8,0,0,0,8,8H211.1a8,8,0,0,0,7.59-5.47l28.49-85.47A16.05,16.05,0,0,0,245,110.64ZM93.34,64,123.2,86.4A8,8,0,0,0,128,88h72v16H69.77a16,16,0,0,0-15.18,10.94L40,158.7V64Zm112,136H43.1l26.67-80H232Z"></path></svg>
+                  <span>Fully configurable</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Organize dashboards by team, campaign type, segment, or time horizon — structured exactly the way your business thinks about its data.</p></div>
+              </div>
+              <div class="cap-acc-item" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z"></path></svg>
+                  <span>Custom refresh schedules</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Set dashboards to refresh daily, weekly, or in real time depending on the metric. Your Monday morning pipeline review is ready before anyone opens their laptop — no manual pull required.</p></div>
+              </div>
+              <div class="cap-acc-item" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M237.66,106.35l-80-80A8,8,0,0,0,144,32V72.35c-25.94,2.22-54.59,14.92-78.16,34.91-28.38,24.08-46.05,55.11-49.76,87.37a12,12,0,0,0,20.68,9.58h0c11-11.71,50.14-48.74,107.24-52V192a8,8,0,0,0,13.66,5.65l80-80A8,8,0,0,0,237.66,106.35ZM160,172.69V144a8,8,0,0,0-8-8c-28.08,0-55.43,7.33-81.29,21.8a196.17,196.17,0,0,0-36.57,26.52c5.8-23.84,20.42-46.51,42.05-64.86C99.41,99.77,127.75,88,152,88a8,8,0,0,0,8-8V51.32L220.69,112Z"></path></svg>
+                  <span>Publish and distribute automatically</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Send dashboard snapshots to Slack channels on a schedule. Stops the cycle of copying numbers into slides manually every week.</p></div>
+              </div>
+              <div class="cap-acc-item" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M128,112a28,28,0,0,0-8,54.83V184a8,8,0,0,0,16,0V166.83A28,28,0,0,0,128,112Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,128,152Zm80-72H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z"></path></svg>
+                  <span>Definitions locked in, always enforced</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Every chart on every dashboard enforces the metric definitions you configured. Change a definition once — every dashboard updates automatically, with no manual reconciliation.</p></div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="cap-accordion-item" data-cap-panel="cap-demo-sage">
-          <button class="cap-accordion-trigger">
-            <span class="cap-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"></path></svg></span>
-            <span class="cap-accordion-title">Sage Agent</span>
-          </button>
-          <div class="cap-accordion-body">
-            <p>An AI analyst that understands your configured metrics — not a generic chatbot. Works inside dashboards and as a standalone analyst your team can query at any time.</p>
-          </div>
-        </div>
-        <div class="cap-accordion-item" data-cap-panel="cap-demo-workflows">
-          <button class="cap-accordion-trigger">
-            <span class="cap-accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256"><path d="M232,112H136V88h8a16,16,0,0,0,16-16V40a16,16,0,0,0-16-16H112A16,16,0,0,0,96,40V72a16,16,0,0,0,16,16h8v24H24a8,8,0,0,0,0,16H56v32H48a16,16,0,0,0-16,16v32a16,16,0,0,0,16,16H80a16,16,0,0,0,16-16V176a16,16,0,0,0-16-16H72V128H184v32h-8a16,16,0,0,0-16,16v32a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V176a16,16,0,0,0-16-16h-8V128h32a8,8,0,0,0,0-16ZM112,40h32V72H112ZM80,208H48V176H80Zm128,0H176V176h32Z"></path></svg></span>
-            <span class="cap-accordion-title">Workflows</span>
-          </button>
-          <div class="cap-accordion-body">
-            <p>Define what the agent monitors, when it alerts, and what it delivers — and where. Configure once; the agent runs them continuously.</p>
+          <div class="cap-panel-right">
+            <div class="cap-video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V200H40ZM164,128a8,8,0,0,1-3.71,6.74l-44,28A8,8,0,0,1,104,156V100a8,8,0,0,1,12.29-6.74l44,28A8,8,0,0,1,164,128Z" fill="#ADB2CE"/></svg>
+              <span class="cap-video-label">Dashboard Demo</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Right: Video placeholders -->
-      <div class="cap-demo-area">
-        <div class="cap-demo-panel active" id="cap-demo-dashboards">
-          <div class="cap-video-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V200H40ZM164,128a8,8,0,0,1-3.71,6.74l-44,28A8,8,0,0,1,104,156V100a8,8,0,0,1,12.29-6.74l44,28A8,8,0,0,1,164,128Z" fill="#ADB2CE"/></svg>
-            <span class="cap-video-label">Dashboard Demo</span>
+      <!-- Panel 2: Sage Agent -->
+      <div class="cap-tab-panel" data-cap-panel="sage">
+        <div class="cap-panel-layout">
+          <div class="cap-panel-left">
+            <h3 class="cap-panel-title">Sage Agent</h3>
+            <p class="cap-tab-desc">An AI analyst that understands your configured metrics — not a generic chatbot. Works inside dashboards and as a standalone analyst your team can query at any time.</p>
+            <div class="cap-panel-accordion">
+              <div class="cap-acc-item is-open" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M169.57,72.59A80,80,0,0,0,16,104v64a16,16,0,0,0,16,16H86.67A80.15,80.15,0,0,0,160,232h64a16,16,0,0,0,16-16V152A80,80,0,0,0,169.57,72.59ZM32,104a64,64,0,1,1,64,64H32ZM224,216H160a64.14,64.14,0,0,1-55.68-32.43A79.93,79.93,0,0,0,174.7,89.71,64,64,0,0,1,224,152Z"></path></svg>
+                  <span>Inside dashboards</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Every dashboard includes Sage. When a chart shows an anomaly, ask Sage directly — "Why did ROAS drop this week?" — and get a verified investigation with full source lineage.</p></div>
+              </div>
+              <div class="cap-acc-item" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+                  <span>Standalone analyst</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Sage isn't limited to dashboard conversations. Use it directly to run ad hoc analysis, prepare for a meeting, or investigate something your team spotted in a report — available 24/7.</p></div>
+              </div>
+              <div class="cap-acc-item" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M96,104a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H104A8,8,0,0,1,96,104Zm8,40h64a8,8,0,0,0,0-16H104a8,8,0,0,0,0,16Zm128,48a32,32,0,0,1-32,32H88a32,32,0,0,1-32-32V64a16,16,0,0,0-32,0c0,5.74,4.83,9.62,4.88,9.66h0A8,8,0,0,1,24,88a7.89,7.89,0,0,1-4.79-1.61h0C18.05,85.54,8,77.61,8,64A32,32,0,0,1,40,32H176a32,32,0,0,1,32,32V168h8a8,8,0,0,1,4.8,1.6C222,170.46,232,178.39,232,192ZM96.26,173.48A8.07,8.07,0,0,1,104,168h88V64a16,16,0,0,0-16-16H67.69A31.71,31.71,0,0,1,72,64V192a16,16,0,0,0,32,0c0-5.74-4.83-9.62-4.88-9.66A7.82,7.82,0,0,1,96.26,173.48ZM216,192a12.58,12.58,0,0,0-3.23-8h-94a26.92,26.92,0,0,1,1.21,8,31.82,31.82,0,0,1-4.29,16H200A16,16,0,0,0,216,192Z"></path></svg>
+                  <span>Applies your configured Skills</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>When you ask "Why did paid search CPL rise?", Sage uses the formula you defined, the attribution window you set, and the segments you track. Every answer is grounded in your data and your logic.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="cap-panel-right">
+            <div class="cap-video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V200H40ZM164,128a8,8,0,0,1-3.71,6.74l-44,28A8,8,0,0,1,104,156V100a8,8,0,0,1,12.29-6.74l44,28A8,8,0,0,1,164,128Z" fill="#ADB2CE"/></svg>
+              <span class="cap-video-label">Sage Agent Demo</span>
+            </div>
           </div>
         </div>
-        <div class="cap-demo-panel" id="cap-demo-sage">
-          <div class="cap-video-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V200H40ZM164,128a8,8,0,0,1-3.71,6.74l-44,28A8,8,0,0,1,104,156V100a8,8,0,0,1,12.29-6.74l44,28A8,8,0,0,1,164,128Z" fill="#ADB2CE"/></svg>
-            <span class="cap-video-label">Sage Agent Demo</span>
+      </div>
+
+      <!-- Panel 3: Workflows -->
+      <div class="cap-tab-panel" data-cap-panel="workflows">
+        <div class="cap-panel-layout">
+          <div class="cap-panel-left">
+            <h3 class="cap-panel-title">Workflows</h3>
+            <p class="cap-tab-desc">Define what the agent monitors, when it alerts, and what it delivers — and where. Configure once; the agent runs them continuously.</p>
+            <div class="cap-panel-accordion">
+              <div class="cap-acc-item is-open" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,71.1a8,8,0,0,1-10.78-3.42,94.13,94.13,0,0,0-33.46-36.91,8,8,0,1,1,8.54-13.54,111.46,111.46,0,0,1,39.12,43.09A8,8,0,0,1,224,71.1ZM35.71,72a8,8,0,0,0,7.1-4.32A94.13,94.13,0,0,1,76.27,30.77a8,8,0,1,0-8.54-13.54A111.46,111.46,0,0,0,28.61,60.32,8,8,0,0,0,35.71,72Zm186.1,103.94A16,16,0,0,1,208,200H167.2a40,40,0,0,1-78.4,0H48a16,16,0,0,1-13.79-24.06C43.22,160.39,48,138.28,48,112a80,80,0,0,1,160,0C208,138.27,212.78,160.38,221.81,175.94ZM150.62,200H105.38a24,24,0,0,0,45.24,0ZM208,184c-10.64-18.27-16-42.49-16-72a64,64,0,0,0-128,0c0,29.52-5.38,53.74-16,72Z"></path></svg>
+                  <span>Slack alert with full context</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Not just "Cost Per Lead is up." The alert explains the magnitude, timeframe, which segments are affected, and what hasn't changed — every detail your team needs to act.</p></div>
+              </div>
+              <div class="cap-acc-item" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M224,208H203.94A88.05,88.05,0,0,0,144,64.37V32a16,16,0,0,0-16-16H80A16,16,0,0,0,64,32V136a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V80.46A72,72,0,0,1,181.25,208H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16Zm-96-72H80V32h48V136ZM72,184a8,8,0,0,1,0-16h64a8,8,0,0,1,0,16Z"></path></svg>
+                  <span>Root-cause investigation with source lineage</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>Agent traces the shift across spend, conversion rates, segments, and attribution — surfacing the most likely driver before you ask. Every calculation step is auditable.</p></div>
+              </div>
+              <div class="cap-acc-item" data-cap-acc>
+                <button class="cap-acc-trigger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3661ed" viewBox="0 0 256 256"><path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>
+                  <span>Specific recommendation with reasoning shown</span>
+                  <div class="cap-acc-chevron"><svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.35352L4.146 4.49952C4.19245 4.54608 4.24762 4.58302 4.30837 4.60823C4.36911 4.63343 4.43423 4.64641 4.5 4.64641C4.56577 4.64641 4.63089 4.63343 4.69163 4.60823C4.75238 4.58302 4.80755 4.54608 4.854 4.49952L8 1.35352" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                </button>
+                <div class="cap-acc-body"><p>A ranked, concrete recommendation grounded in your historical data — with logic and assumptions fully transparent so your team can evaluate it, not just accept it.</p></div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="cap-demo-panel" id="cap-demo-workflows">
-          <div class="cap-video-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V200H40ZM164,128a8,8,0,0,1-3.71,6.74l-44,28A8,8,0,0,1,104,156V100a8,8,0,0,1,12.29-6.74l44,28A8,8,0,0,1,164,128Z" fill="#ADB2CE"/></svg>
-            <span class="cap-video-label">Workflows Demo</span>
+          <div class="cap-panel-right">
+            <div class="cap-video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V200H40ZM164,128a8,8,0,0,1-3.71,6.74l-44,28A8,8,0,0,1,104,156V100a8,8,0,0,1,12.29-6.74l44,28A8,8,0,0,1,164,128Z" fill="#ADB2CE"/></svg>
+              <span class="cap-video-label">Workflows Demo</span>
+            </div>
           </div>
         </div>
       </div>
@@ -429,7 +527,7 @@
     <h2 class="section-heading reveal-on-scroll">Built for GTM data. <span style="color: var(--color-primary-500);">Not built for everything.</span></h2>
     <p class="section-sub reveal-on-scroll">Generic AI tools are powerful — they're just not configured for how GTM ops teams actually work, with specific definitions, attribution rules, and formulas that vary by company.</p>
 
-    <div class="matrix-columns reveal-on-scroll">
+    <div class="matrix-scroll-wrap"><div class="matrix-columns reveal-on-scroll">
       <!-- Feature labels column -->
       <div class="matrix-col matrix-col-labels">
         <div class="matrix-col-header"><span class="matrix-col-title">Feature</span></div>
@@ -474,7 +572,7 @@
         </ul>
       </div>
       </div><!-- /matrix-icon-cols -->
-    </div>
+    </div></div><!-- /matrix-scroll-wrap -->
   </div></div>
 </section>
 
@@ -800,7 +898,8 @@
 
       <!-- Left column -->
       <div class="mktg-faq-left">
-        <h2 class="mktg-faq-title reveal-on-scroll">FAQs</h2>
+        <div class="section-label reveal-on-scroll"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#3661ed" viewBox="0 0 256 256"><path d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path></svg>FAQ</div>
+        <h2 class="section-heading reveal-on-scroll">Frequently asked questions</h2>
         <p class="mktg-faq-contact reveal-on-scroll">For any further questions, send us a message at <a href="mailto:support@petavue.com">support@petavue.com</a></p>
       </div>
 

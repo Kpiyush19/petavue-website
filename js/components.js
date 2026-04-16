@@ -28,6 +28,8 @@
       this.classList.toggle('is-open');
       menu.classList.toggle('is-open');
       document.body.style.overflow = menu.classList.contains('is-open') ? 'hidden' : '';
+      var nav = document.querySelector('.navbar_component');
+      if (nav) nav.classList.toggle('nav-menu-open', menu.classList.contains('is-open'));
     });
 
     dropdowns.forEach(function (dd) {

@@ -19,7 +19,7 @@
   flex-shrink: 0;
 }
 .sec-hero-title h1 {
-  font-family: 'Geist', Helvetica, 'Segoe UI', Arial, sans-serif;
+  font-family: 'Geist', 'Instrument Sans';
   font-size: 60px;
   font-weight: 400;
   line-height: 72px;
@@ -121,7 +121,7 @@
   margin-bottom: 32px;
 }
 .sec-pillar-card h3 {
-  font-family: 'Geist', Helvetica, 'Segoe UI', Arial, sans-serif;
+  font-family: 'Geist', 'Instrument Sans';
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
@@ -143,7 +143,7 @@
   position: relative;
 }
 .sec-standards > h2 {
-  font-family: 'Geist', Helvetica, 'Segoe UI', Arial, sans-serif;
+  font-family: 'Geist', 'Instrument Sans';
   font-size: 48px;
   font-weight: 400;
   line-height: 60px;
@@ -182,7 +182,7 @@
   padding: 0 32px 28px;
 }
 .sec-standard-text h3 {
-  font-family: 'Geist', Helvetica, 'Segoe UI', Arial, sans-serif;
+  font-family: 'Geist', 'Instrument Sans';
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -361,7 +361,7 @@
   text-align: center;
 }
 .sec-report h2 {
-  font-family: 'Geist', Helvetica, 'Segoe UI', Arial, sans-serif;
+  font-family: 'Geist', 'Instrument Sans';
   font-size: 60px;
   font-weight: 400;
   line-height: 72px;
