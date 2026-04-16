@@ -774,6 +774,7 @@
 
 /* Scrolling skill pills marquee */
 .skill-pills-marquee {
+  display: none !important;
   overflow: clip;
   margin: 48px 0 0;
   width: 100%;
@@ -913,12 +914,18 @@
 .mktg-skills-grid.in-view .mktg-skill-card:nth-child(6) > * { opacity: 1; transform: translateY(0); transition-delay: 1.25s; }
 
 /* --- Skills bottom row: note + stats side by side --- */
+.skills-bottom-wrap {
+  background: var(--color-primary-50);
+  border: 1px solid var(--color-primary-100, rgba(54,97,237,0.12));
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 48px;
+}
 .skills-bottom-row {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 48px;
-  margin-top: 48px;
   padding: 8px 0;
 }
 .skills-bottom-row .mktg-skills-note.reveal-on-scroll { transition-delay: 0s; }
@@ -1570,113 +1577,54 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-.matrix-columns {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 0;
+/* Comparison table */
+.matrix-table {
+  width: 100%;
   max-width: 80rem;
   margin: 0 auto;
-  align-items: stretch;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 16px;
-  overflow: visible;
-}
-.matrix-icon-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.matrix-col {
-  border-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
   overflow: hidden;
-  border-right: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.08);
 }
-.matrix-col:last-child {
-  border-right: none;
-}
-.matrix-col-header {
-  padding: 24px 28px 16px;
-  display: flex;
-  align-items: center;
-}
-.matrix-col-title {
-  font-family: 'Instrument Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-}
-.matrix-col-logo { height: 28px; width: auto; }
-.matrix-col-features {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.matrix-col-features li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.matrix-table thead th {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  height: 58px;
-  padding: 0 28px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px 24px;
+  text-align: center;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
-.matrix-col-features li:last-child {
+.matrix-table thead th:first-child {
+  text-align: left;
+}
+.matrix-th-generic {
+  color: var(--text-muted);
+  background: var(--color-neutral-50);
+}
+.matrix-th-petavue {
+  color: var(--text);
+  background: #fff;
+}
+.matrix-col-logo { height: 28px; width: auto; }
+.matrix-table tbody td {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.matrix-table tbody tr:last-child td {
   border-bottom: none;
 }
-.matrix-col-features li svg { flex-shrink: 0; margin-top: 1px; }
-
-/* Labels column */
-.matrix-col-labels {
-  background: transparent;
+.matrix-cell-icon {
+  text-align: center;
+  vertical-align: middle;
 }
-.matrix-col-labels .matrix-col-features li {
-  color: var(--text);
-  font-weight: 500;
-}
-.matrix-col-labels .matrix-col-header {
-  visibility: hidden;
-}
-
-/* Icon-only columns */
-.matrix-col-icons {
-  align-items: center;
-}
-.matrix-col-icons li {
-  justify-content: center;
-  width: 100%;
-  height: 58px;
-  padding: 0 28px;
-}
-
-/* Petavue column */
-.matrix-col-petavue {
+.matrix-cell-petavue {
   background: #fff;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  width: 100%;
-}
-.matrix-col-petavue .matrix-col-header {
-  justify-content: center;
-}
-
-/* Generic AI — plain */
-.matrix-col-generic {
-  background: transparent;
-  width: 100%;
-}
-.matrix-col-generic .matrix-col-header {
-  justify-content: center;
-}
-.matrix-col-generic .matrix-col-features li {
-  color: var(--color-neutral-500);
-}
-
-@media (max-width: 640px) {
-  .matrix-icon-cols { grid-template-columns: 80px 80px; }
 }
 
 /* --- Runs itself section --- */
@@ -2891,10 +2839,14 @@
   .mktg-role-header { margin-bottom: 40px; }
   .mktg-role-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .mktg-role-tabs::after { display: none; }
-  .mktg-role-tab { flex: none; width: auto; min-width: auto; padding: 10px 12px; }
+  .mktg-role-tab { flex: none; width: auto; min-width: auto; padding: 10px 12px; color: var(--text-muted); }
+  .mktg-role-tab:hover { background: var(--color-neutral-100); }
   .mktg-role-tab.is-active { background: #fff; box-shadow: 0 0 0 1px rgba(17,24,39,0.08), 0 2px 4px rgba(17,24,39,0.06); }
+  .mktg-role-tab.is-active:hover { background: #fff; }
   .mktg-role-tab.is-active .mktg-role-tab-icon { color: var(--color-primary-500); }
   .mktg-role-tab.is-active .mktg-role-tab-label { color: var(--text); }
+  .mktg-role-tab .mktg-role-tab-icon { color: var(--text-muted); }
+  .mktg-role-tab .mktg-role-tab-label { color: var(--text-muted); }
   .mktg-role-panel.is-active { display: flex; flex-direction: column; gap: 40px; }
   .mktg-role-title { font-size: 28px; }
   .mktg-role-right { padding: 24px; }
@@ -2988,20 +2940,32 @@
 /* Tablet (991px) */
 @media (max-width: 991px) {
   /* Navbar — keep transparent until scrolled or menu open */
-  .navbar_component { background: transparent !important; background-image: none !important; height: auto !important; }
-  .navbar_container { background: transparent !important; }
-  .navbar_component.nav-scrolled,
-  .navbar_component.nav-menu-open { background: var(--bg) !important; }
-  .navbar_component.nav-scrolled .navbar_container,
-  .navbar_component.nav-menu-open .navbar_container { background: var(--bg) !important; }
-  /* Dark mode navbar on mobile — reset when menu open */
-  .navbar_component.nav-dark.nav-menu-open { background: var(--bg) !important; }
-  .navbar_component.nav-dark.nav-menu-open .link_button,
-  .navbar_component.nav-dark.nav-menu-open .navbar_dropdown-toggle,
-  .navbar_component.nav-dark.nav-menu-open .navbar_login { color: var(--text) !important; }
-  .navbar_component.nav-dark.nav-menu-open .navbar_dropdown-icon svg { stroke: var(--text) !important; }
-  .navbar_component.nav-dark.nav-menu-open .badge-new { background: linear-gradient(137deg, #3661ed 0%, #825CDE 100%); color: #fff; }
-  .navbar_component.nav-dark.nav-menu-open .navbar_menu-divider { background: #d4d9ea; }
+  .navbar_component { background: transparent !important; background-image: none !important; height: auto !important; border-bottom: none !important; }
+  .navbar_container { background: none !important; }
+  /* Scrolled — light fill */
+  .navbar_component.nav-scrolled { background: var(--bg) !important; border-bottom: 1px solid var(--color-neutral-200) !important; }
+  .navbar_component.nav-scrolled .navbar_container { background: none !important; }
+  /* Menu open — light fill */
+  .navbar_component.nav-menu-open { background: var(--bg) !important; border-bottom: 1px solid var(--color-neutral-200) !important; }
+  .navbar_component.nav-menu-open .navbar_container { background: none !important; }
+  /* Dark mode — keep dark bg, dark text, dark border */
+  .navbar_component.nav-dark { background: transparent !important; border-bottom: none !important; }
+  .navbar_component.nav-dark .navbar_container { background: none !important; }
+  .navbar_component.nav-dark.nav-scrolled { background: var(--color-neutral-900) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+  .navbar_component.nav-dark.nav-scrolled .navbar_container { background: none !important; }
+  /* Dark + menu open — dark bg for expanded menu */
+  .navbar_component.nav-dark.nav-menu-open { background: var(--color-neutral-900) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+  .navbar_component.nav-dark.nav-menu-open .navbar_container { background: none !important; }
+  .navbar_component.nav-dark.nav-menu-open .navbar_menu { background: var(--color-neutral-900) !important; }
+  /* Dark hamburger lines */
+  .navbar_component.nav-dark .menu-icon_line { background: #fff !important; }
+  /* Dark mobile menu links stay white */
+  .navbar_component.nav-dark .navbar_menu .link_button,
+  .navbar_component.nav-dark .navbar_menu .navbar_dropdown-toggle,
+  .navbar_component.nav-dark .navbar_menu .navbar_login { color: #fff !important; }
+  .navbar_component.nav-dark .navbar_menu .navbar_dropdown-icon svg { stroke: #fff !important; }
+  .navbar_component.nav-dark .navbar_menu .navbar_menu-divider { background: rgba(255,255,255,0.15) !important; }
+  .navbar_component.nav-dark .navbar_menu .navbar_menu-buttons .btn-demo { background: #3661ed !important; color: #fff !important; }
 
   /* Hero */
   .mktg-hero-inner { max-width: 100%; margin-top: 56px; }
@@ -3029,13 +2993,11 @@
 
   /* Matrix — horizontal scroll, 3 equal columns */
   .mktg-matrix-section { padding: 64px 0; }
-  .matrix-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; max-width: none; min-width: 600px; overflow: visible; }
-  .matrix-col-labels { min-width: 0; }
-  .matrix-icon-cols { display: contents; }
+  .matrix-table { font-size: 14px; }
 
-  /* Role panel — remove side padding */
-  .mktg-role-panel.is-active .mktg-role-left,
-  .mktg-role-panel.is-active .mktg-role-right { width: 100%; padding-left: 0; padding-right: 0; }
+  /* Role panel */
+  .mktg-role-panel.is-active .mktg-role-left { width: 100%; padding-left: 0; padding-right: 0; }
+  .mktg-role-panel.is-active .mktg-role-right { width: 100%; padding: 16px; }
 
   /* Illustration cards */
   .mktg-ill-cards { grid-template-columns: 1fr; gap: 16px; }
@@ -3077,7 +3039,8 @@
   .hiw-step-badge { font-size: 12px; padding: 4px 12px; }
 
   /* Illustration cards */
-  .mktg-ill-card { align-items: flex-start; }
+  .mktg-ill-card { align-items: center; }
+  .mktg-ill-card-visual { width: 100%; display: flex; justify-content: center; }
   .mktg-ill-card-inner { background: none; padding: 0; }
   .mktg-ill-card-body { padding: 12px 0 24px; }
 
@@ -3096,10 +3059,9 @@
   .cap-acc-body p { font-size: 12px; padding: 0 0 12px 36px; }
 
   /* Matrix — 3 equal columns with scroll, matched rows */
-  .matrix-columns { grid-template-columns: 1fr 1fr 1fr; min-width: 500px; overflow: visible; }
-  .matrix-col-features li { font-size: 14px; height: 48px; padding: 0 16px; }
-  .matrix-col-icons li { height: 48px; padding: 0 16px; }
-  .matrix-col-header { padding: 16px; }
+  .matrix-table tbody td { font-size: 12px; padding: 12px 16px; }
+  .matrix-table thead th { font-size: 12px; padding: 12px 16px; }
+  .matrix-col-logo { height: 20px; }
 
   /* Skills */
   .skill-pills-marquee { margin: 24px 0 0; }
