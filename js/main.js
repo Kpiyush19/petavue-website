@@ -468,7 +468,7 @@ function switchSkillTab(btn) {
 
     video.addEventListener('click', function(e) {
       e.preventDefault();
-      togglePlay(video, btn);
+      openLightbox(video);
     });
 
     if (btn) {
@@ -478,8 +478,74 @@ function switchSkillTab(btn) {
       });
     }
 
+    // Inject fullscreen hint button
+    var fsBtn = document.createElement('button');
+    fsBtn.className = 'video-fs-btn';
+    fsBtn.setAttribute('aria-label', 'View fullscreen');
+    fsBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M216,48V96a8,8,0,0,1-16,0V67.31l-50.34,50.35a8,8,0,0,1-11.32-11.32L188.69,56H160a8,8,0,0,1,0-16h48A8,8,0,0,1,216,48ZM106.34,138.34,56,188.69V160a8,8,0,0,0-16,0v48a8,8,0,0,0,8,8H96a8,8,0,0,0,0-16H67.31l50.35-50.34a8,8,0,0,0-11.32-11.32Z"/></svg><span>View fullscreen</span>';
+    wrap.appendChild(fsBtn);
+    fsBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openLightbox(video);
+    });
+
     observer.observe(wrap);
   });
+
+  // Lightbox
+  var lightbox, lightboxVideo, lastInlineVideo;
+
+  function buildLightbox() {
+    lightbox = document.createElement('div');
+    lightbox.className = 'video-lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.innerHTML = '' +
+      '<div class="video-lightbox-inner">' +
+      '  <button class="video-lightbox-close" aria-label="Close">' +
+      '    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>' +
+      '  </button>' +
+      '  <video class="video-lightbox-video" controls playsinline></video>' +
+      '</div>';
+    document.body.appendChild(lightbox);
+    lightboxVideo = lightbox.querySelector('video');
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    lightbox.querySelector('.video-lightbox-close').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+  }
+
+  function openLightbox(sourceVideo) {
+    if (!lightbox) buildLightbox();
+    var src = sourceVideo.querySelector('source') ? sourceVideo.querySelector('source').src : sourceVideo.src;
+    if (!src) return;
+    lastInlineVideo = sourceVideo;
+    sourceVideo.pause();
+    lightboxVideo.src = src;
+    lightboxVideo.currentTime = 0;
+    lightbox.classList.add('is-open');
+    document.body.classList.add('video-lightbox-open');
+    lightboxVideo.play().catch(function() {});
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('is-open');
+    document.body.classList.remove('video-lightbox-open');
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute('src');
+    lightboxVideo.load();
+    if (lastInlineVideo) {
+      var wrap = lastInlineVideo.closest('.video-wrap');
+      var rect = wrap ? wrap.getBoundingClientRect() : null;
+      var inView = rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (inView && !userPaused.get(lastInlineVideo)) lastInlineVideo.play().catch(function() {});
+    }
+  }
 })();
 
 // Hero media scroll reveal — scale + opacity
@@ -488,6 +554,11 @@ function switchSkillTab(btn) {
   if (!heroMedia) return;
 
   function updateTransform() {
+    if (window.innerWidth <= 991) {
+      heroMedia.style.transform = 'none';
+      heroMedia.style.opacity = '1';
+      return;
+    }
     var rect = heroMedia.getBoundingClientRect();
     var windowH = window.innerHeight;
     var progress = Math.min(Math.max((windowH - rect.top) / (windowH * 0.6), 0), 1);
@@ -498,6 +569,7 @@ function switchSkillTab(btn) {
   }
 
   window.addEventListener('scroll', updateTransform, { passive: true });
+  window.addEventListener('resize', updateTransform, { passive: true });
   updateTransform();
 })();
 
