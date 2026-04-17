@@ -7,16 +7,7 @@
 }
 .shadow { box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); }
 
-/* Scroll reveal animation */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Scroll reveal animation removed — elements render in place */
 
 /* Fixed navbar on marketing page — transparent then fills on scroll */
 .navbar_component {
@@ -396,8 +387,6 @@
   animation: none !important;
   margin-top: 48px;
   margin-bottom: 48px;
-  transform: scale(0.7);
-  opacity: 0;
 }
 .hero-media-inner {
   width: 100%;
@@ -612,17 +601,7 @@
 .ill-bar-chart .gridline { position: absolute; left: 10px; right: 10px; height: 0; border-top: 0.5px solid #f0ede8; }
 .ill-bar-group { position: relative; display: flex; gap: 4px; align-items: flex-end; flex: 1; justify-content: center; }
 .ill-bar-group-label { position: absolute; bottom: -16px; left: 50%; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 10px; color: #aaa9a0; white-space: nowrap; }
-.ill-bar { border-radius: 4px; width: 22px; transform-origin: bottom; transform: scaleY(0); }
-.ill-bar-chart.in-view .ill-bar { animation: barGrow 0.6s ease-out forwards; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(1) .ill-bar:nth-child(1) { animation-delay: 0s; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(1) .ill-bar:nth-child(2) { animation-delay: 0.08s; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(2) .ill-bar:nth-child(1) { animation-delay: 0.15s; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(2) .ill-bar:nth-child(2) { animation-delay: 0.23s; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(3) .ill-bar:nth-child(1) { animation-delay: 0.3s; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(3) .ill-bar:nth-child(2) { animation-delay: 0.38s; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(4) .ill-bar:nth-child(1) { animation-delay: 0.45s; }
-.ill-bar-chart.in-view .ill-bar-group:nth-child(4) .ill-bar:nth-child(2) { animation-delay: 0.53s; }
-@keyframes barGrow { to { transform: scaleY(1); } }
+.ill-bar { border-radius: 4px; width: 22px; }
 .ill-bar-dash { position: absolute; width: 0; border-left: 1px dashed #b8895a; }
 .ill-insight-bar { display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; background: #fef3d5; border-radius: 4px; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; color: #a15c00; letter-spacing: 0.01em; }
 .ill-insight-bar::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #f87f00; flex-shrink: 0; }
@@ -755,6 +734,9 @@
   transition: color 0.4s ease;
   z-index: 1;
   box-shadow: none;
+}
+.hiw-step-badge .hiw-step-num {
+  font-weight: 600;
 }
 .hiw-step-badge.hiw-step-active {
   color: var(--color-primary-500);
@@ -947,18 +929,7 @@
 .mktg-skill-card:hover::before {
   opacity: 1;
 }
-/* Skill card inner elements animate, card stays */
-.mktg-skills-grid .mktg-skill-card > * {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.mktg-skills-grid.in-view .mktg-skill-card:nth-child(1) > * { opacity: 1; transform: translateY(0); transition-delay: 0s; }
-.mktg-skills-grid.in-view .mktg-skill-card:nth-child(2) > * { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
-.mktg-skills-grid.in-view .mktg-skill-card:nth-child(3) > * { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
-.mktg-skills-grid.in-view .mktg-skill-card:nth-child(4) > * { opacity: 1; transform: translateY(0); transition-delay: 0.75s; }
-.mktg-skills-grid.in-view .mktg-skill-card:nth-child(5) > * { opacity: 1; transform: translateY(0); transition-delay: 1s; }
-.mktg-skills-grid.in-view .mktg-skill-card:nth-child(6) > * { opacity: 1; transform: translateY(0); transition-delay: 1.25s; }
+/* Skill card inner reveal removed — renders in place */
 
 /* --- Skills bottom row: note + stats side by side --- */
 .skills-bottom-wrap {
@@ -1131,7 +1102,7 @@
 }
 .cap-panel-layout {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: flex-start;
 }
@@ -1322,9 +1293,17 @@
   position: relative;
   overflow: hidden;
   border-radius: inherit;
-}
-.video-wrap video {
   cursor: pointer;
+}
+.video-wrap video { display: none !important; }
+.video-wrap .video-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: inherit;
+  pointer-events: none;
+  user-select: none;
 }
 .video-play-btn {
   position: absolute;
@@ -1336,16 +1315,13 @@
   background: rgba(0,0,0,0.5);
   border: none;
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.2s;
   z-index: 2;
   padding: 0;
-}
-.video-wrap:hover .video-play-btn {
-  opacity: 1;
 }
 .video-play-btn svg {
   width: 14px;
@@ -1357,37 +1333,105 @@
 .video-play-btn.is-paused .icon-play { display: block; }
 .video-play-btn.is-paused .icon-pause { display: none; }
 
-.video-fs-btn {
+.video-fs-btn { display: none !important; }
+
+/* Hero video — single "Watch video" CTA, no pause/fullscreen chrome */
+.video-wrap--hero .video-play-btn,
+.video-wrap--hero .video-fs-btn { display: none !important; }
+
+.hero-watch-btn {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  height: 32px;
-  padding: 0 12px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,255,255,0.12);
+  gap: 12px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 200px;
+  background: linear-gradient(90deg, #52577A 0%, #757A97 100%);
+  box-shadow: 0 12px 12px 0 rgba(122, 122, 122, 0.12);
   color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
   letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
   cursor: pointer;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;
-  z-index: 2;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  z-index: 3;
+  transition: background 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              filter 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-.video-wrap:hover .video-fs-btn {
-  opacity: 1;
-  transform: translateY(0);
+.video-wrap--hero:hover .hero-watch-btn,
+.hero-watch-btn:hover {
+  background: linear-gradient(90deg, #3B4067 0%, #5E6385 100%);
+  box-shadow: 0 18px 24px 0 rgba(59, 64, 103, 0.22);
+  filter: brightness(1.05);
+  transform: translate(-50%, -50%) scale(1.04);
 }
-.video-fs-btn:hover { background: rgba(0,0,0,0.75); }
-.video-fs-btn svg { width: 14px; height: 14px; fill: currentColor; }
+.hero-watch-btn-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-watch-btn-icon svg { width: 16px; height: 16px; fill: #fff; }
+.hero-watch-btn-icon--hover { display: none; }
+.video-wrap--hero:hover .hero-watch-btn-icon--rest,
+.hero-watch-btn:hover .hero-watch-btn-icon--rest { display: none; }
+.video-wrap--hero:hover .hero-watch-btn-icon--hover,
+.hero-watch-btn:hover .hero-watch-btn-icon--hover { display: inline-flex; }
+
+/* Icon-only play button for non-hero videos */
+.video-watch-icon-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #52577A 0%, #757A97 100%);
+  box-shadow: 0 12px 12px 0 rgba(122, 122, 122, 0.12);
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              filter 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.video-wrap:hover .video-watch-icon-btn,
+.video-watch-icon-btn:hover {
+  background: linear-gradient(90deg, #3B4067 0%, #5E6385 100%);
+  box-shadow: 0 18px 24px 0 rgba(59, 64, 103, 0.22);
+  filter: brightness(1.05);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+.video-watch-icon-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+.video-watch-icon-btn-icon svg { width: 20px; height: 20px; fill: #fff; }
+.video-watch-icon-btn-icon--hover { display: none; }
+.video-wrap:hover .video-watch-icon-btn .video-watch-icon-btn-icon--rest,
+.video-watch-icon-btn:hover .video-watch-icon-btn-icon--rest { display: none; }
+.video-wrap:hover .video-watch-icon-btn .video-watch-icon-btn-icon--hover,
+.video-watch-icon-btn:hover .video-watch-icon-btn-icon--hover { display: inline-flex; }
+/* Hide on the hero wrap — hero uses the pill button */
+.video-wrap--hero .video-watch-icon-btn { display: none !important; }
 
 /* Video lightbox / fullscreen overlay */
 .video-lightbox {

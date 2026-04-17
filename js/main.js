@@ -408,15 +408,10 @@ function switchSkillTab(btn) {
       panels.forEach(function(p) {
         var v = p.querySelector('video');
         if (v) { v.pause(); v.currentTime = 0; }
-        var b = p.querySelector('.video-play-btn');
-        if (b) b.classList.remove('is-paused');
       });
       var panel = document.querySelector('.cap-tab-panel[data-cap-panel="' + target + '"]');
       if (panel) {
         panel.classList.add('is-active');
-        // Play the new panel's video
-        var newVideo = panel.querySelector('video');
-        if (newVideo) { newVideo.currentTime = 0; newVideo.play(); }
       }
     });
   });
@@ -438,54 +433,36 @@ function switchSkillTab(btn) {
     }
   }
 
-  // IntersectionObserver — play when in view, pause when out
+  function loadLazySources(video) {
+    var sources = video.querySelectorAll('source[data-src]');
+    if (!sources.length) return false;
+    sources.forEach(function(s) {
+      s.src = s.getAttribute('data-src');
+      s.removeAttribute('data-src');
+    });
+    video.load();
+    return true;
+  }
+
+  // IntersectionObserver — lazy-load sources near viewport, pause when scrolled away
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       var video = entry.target.querySelector('video');
-      var btn = entry.target.querySelector('.video-play-btn');
       if (!video) return;
       if (entry.isIntersecting) {
-        if (!userPaused.get(video)) {
-          video.play();
-          if (btn) btn.classList.remove('is-paused');
-        }
-      } else {
+        loadLazySources(video);
+      } else if (!video.paused) {
         video.pause();
-        video.currentTime = 0;
-        userPaused.set(video, false);
-        if (btn) btn.classList.remove('is-paused');
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.3, rootMargin: '200px 0px' });
 
   document.querySelectorAll('.video-wrap').forEach(function(wrap) {
     var video = wrap.querySelector('video');
-    var btn = wrap.querySelector('.video-play-btn');
     if (!video) return;
 
-    // Don't autoplay — let observer handle it
-    video.pause();
-
-    video.addEventListener('click', function(e) {
+    wrap.addEventListener('click', function(e) {
       e.preventDefault();
-      openLightbox(video);
-    });
-
-    if (btn) {
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        togglePlay(video, btn);
-      });
-    }
-
-    // Inject fullscreen hint button
-    var fsBtn = document.createElement('button');
-    fsBtn.className = 'video-fs-btn';
-    fsBtn.setAttribute('aria-label', 'View fullscreen');
-    fsBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M216,48V96a8,8,0,0,1-16,0V67.31l-50.34,50.35a8,8,0,0,1-11.32-11.32L188.69,56H160a8,8,0,0,1,0-16h48A8,8,0,0,1,216,48ZM106.34,138.34,56,188.69V160a8,8,0,0,0-16,0v48a8,8,0,0,0,8,8H96a8,8,0,0,0,0-16H67.31l50.35-50.34a8,8,0,0,0-11.32-11.32Z"/></svg><span>View fullscreen</span>';
-    wrap.appendChild(fsBtn);
-    fsBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
       openLightbox(video);
     });
 
@@ -521,7 +498,8 @@ function switchSkillTab(btn) {
 
   function openLightbox(sourceVideo) {
     if (!lightbox) buildLightbox();
-    var src = sourceVideo.querySelector('source') ? sourceVideo.querySelector('source').src : sourceVideo.src;
+    var sourceEl = sourceVideo.querySelector('source');
+    var src = sourceEl ? (sourceEl.src || sourceEl.getAttribute('data-src')) : sourceVideo.src;
     if (!src) return;
     lastInlineVideo = sourceVideo;
     sourceVideo.pause();
@@ -539,38 +517,7 @@ function switchSkillTab(btn) {
     lightboxVideo.pause();
     lightboxVideo.removeAttribute('src');
     lightboxVideo.load();
-    if (lastInlineVideo) {
-      var wrap = lastInlineVideo.closest('.video-wrap');
-      var rect = wrap ? wrap.getBoundingClientRect() : null;
-      var inView = rect && rect.top < window.innerHeight && rect.bottom > 0;
-      if (inView && !userPaused.get(lastInlineVideo)) lastInlineVideo.play().catch(function() {});
-    }
   }
-})();
-
-// Hero media scroll reveal — scale + opacity
-(function() {
-  var heroMedia = document.querySelector('.hero-media');
-  if (!heroMedia) return;
-
-  function updateTransform() {
-    if (window.innerWidth <= 991) {
-      heroMedia.style.transform = 'none';
-      heroMedia.style.opacity = '1';
-      return;
-    }
-    var rect = heroMedia.getBoundingClientRect();
-    var windowH = window.innerHeight;
-    var progress = Math.min(Math.max((windowH - rect.top) / (windowH * 0.6), 0), 1);
-    var scale = 0.7 + 0.3 * progress;
-    var opacity = progress;
-    heroMedia.style.transform = 'scale(' + scale + ')';
-    heroMedia.style.opacity = opacity;
-  }
-
-  window.addEventListener('scroll', updateTransform, { passive: true });
-  window.addEventListener('resize', updateTransform, { passive: true });
-  updateTransform();
 })();
 
 // How-it-works step badges (static — no animation)
