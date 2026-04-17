@@ -3,19 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Agents for Marketing Teams | Petavue</title>
-<meta name="description" content="Petavue agents analyze your marketing data deeply — ROAS, campaign influence, pipeline contribution — and turn it into specific recommendations your team can act on immediately.">
-<meta property="og:title" content="AI Agents for Marketing Teams | Petavue">
-<meta property="og:description" content="Petavue agents analyze your marketing data deeply — ROAS, campaign influence, pipeline contribution — and turn it into specific recommendations your team can act on immediately.">
+<title>Petavue — AI Marketing Agents for GTM Data Analysis</title>
+<meta name="description" content="AI agents that monitor GTM metrics, surface insights, and deliver actionable recommendations automatically. Track, analyze, and optimize marketing performance continuously.">
+<meta property="og:title" content="Petavue — AI Marketing Agents for GTM Data Analysis">
+<meta property="og:description" content="AI agents that monitor GTM metrics, surface insights, and deliver actionable recommendations automatically. Track, analyze, and optimize marketing performance continuously.">
 <meta property="og:image" content="https://www.petavue.com/assets/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.petavue.com/marketing">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Agents for Marketing Teams | Petavue">
-<meta name="twitter:description" content="Petavue agents analyze your marketing data deeply — ROAS, campaign influence, pipeline contribution — and turn it into specific recommendations your team can act on immediately.">
+<meta name="twitter:title" content="Petavue — AI Marketing Agents for GTM Data Analysis">
+<meta name="twitter:description" content="AI agents that monitor GTM metrics, surface insights, and deliver actionable recommendations automatically. Track, analyze, and optimize marketing performance continuously.">
 <meta name="twitter:image" content="https://www.petavue.com/assets/og-image.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Petavue",
+  "url": "https://www.petavue.com/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does setup actually look like — how long before we see value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most teams see their first dashboards within a day of connecting their data sources. The agent works with your data as it exists — no ETL project, no data transformation pipeline required. Skills handle the domain logic automatically, and you configure your definitions through a guided setup process. For teams with complex custom attribution models, full configuration typically takes 3–5 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the agent automatically take actions — like pausing campaigns or changing bids?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — Petavue produces specific recommendations for your team, not automatic actions. The agent monitors, investigates, and recommends; a person on your team decides whether and how to act. We're deliberate about this: the human stays in the loop on every action taken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between a Skill and a template?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Templates are fully static — they apply fixed logic regardless of how your business works. Skills give the agent domain expertise that adapts to your specific data model, definitions, and thresholds. A ROAS Skill applies your formula, with your attribution window, using your spend categories. That distinction makes the output defensible rather than just fast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Sage be used outside of dashboards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sage is embedded in every dashboard but also available as a standalone analyst your team can query at any time — before a meeting, during planning, or when something surfaces in a report. It has access to all your configured metrics and historical data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Petavue work alongside our existing data team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Petavue complements your data team, not replaces them. Data teams focus on infrastructure and data quality. Petavue handles the weekly ops analysis — lead pacing, campaign diagnostics, pipeline monitoring — that requires domain knowledge and speed. Most teams find it reduces the volume of ad hoc analysis requests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What data sources does Petavue connect to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Petavue connects to the core GTM stack — Salesforce, HubSpot, Google Ads, Meta, LinkedIn, Marketo, Outreach, Gong, and Zendesk, among others. The agent can also work directly from your data warehouse. If you're running a non-standard tool, reach out — we'll let you know what's possible before you commit."
+      }
+    }
+  ]
+}
+</script>
 <link rel="stylesheet" href="style/colorography.css">
 <link rel="stylesheet" href="style/global.css">
 <link rel="stylesheet" href="style/marketing.css">
@@ -28,6 +92,8 @@
 
 <!-- HERO -->
 <section class="mktg-hero" id="how-it-works">
+  <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
   <div class="mktg-hero-inner">
     <div class="hero-badge">Purpose-built for <span class="hero-badge-keyword">GTM teams</span></div>
     <h1 style="color: var(--text);">Your GTM data is scattered. <em><span style="color: var(--color-primary-500);">Petavue's agents</span> find what to do about it.</em></h1>
@@ -538,7 +604,7 @@
     <table class="matrix-table reveal-on-scroll">
       <thead>
         <tr>
-          <th></th>
+          <th class="matrix-th-features">Features</th>
           <th class="matrix-th-generic">Generic AI</th>
           <th class="matrix-th-petavue"><img src="assets/petavue-logo-white.svg" alt="Petavue" class="matrix-col-logo"></th>
         </tr>
