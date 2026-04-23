@@ -452,7 +452,6 @@ body .navbar_component {
 .pricing-compare-inner {
   background: #ffffff;
   border: 1px solid var(--color-neutral-100);
-  border-radius: 12px;
   padding: 0;
   margin-top: 40px;
   /* overflow visible on desktop so thead sticky can work relative to body scroll */
@@ -466,7 +465,6 @@ body .navbar_component {
   border-collapse: separate;
   border-spacing: 0;
   font-family: 'Inter', sans-serif;
-  overflow: hidden;
 }
 
 /* Plan column headers — sticky as user scrolls through the table */
@@ -860,47 +858,53 @@ body .mktg-faq-section { background: #ffffff; }
   }
   .pricing-plan--featured { border-color: var(--color-primary-500); }
 
-  /* --- Compare table --- */
+  /* --- Compare table ---
+     Keep thead sticky on mobile — so we let the table fit the viewport
+     (no horizontal overflow container, since that would break sticky). */
   .pricing-compare-inner {
     margin-top: 24px;
-    border-radius: 12px;
     padding: 0;
-    overflow-x: auto;
-    /* Gentle scroll hint on the right edge */
-    background:
-      linear-gradient(90deg, #ffffff 70%, rgba(255,255,255,0)) 0 0 / 40px 100% no-repeat,
-      linear-gradient(-90deg, #ffffff 70%, rgba(255,255,255,0)) 100% 0 / 40px 100% no-repeat,
-      #ffffff;
+    overflow: visible;
+    background: #ffffff;
   }
-  /* Disable sticky thead on mobile (horizontal-scroll container would break it anyway) */
+  /* Sticky thead kept; tighter top offset for mobile navbar */
   .pricing-compare-table thead th {
-    position: static;
-    top: auto;
-    padding: 18px 14px;
+    top: 68px;
+    padding: 14px 10px;
   }
-  /* Table gets horizontal scroll for dense content on narrow phones */
-  .pricing-compare-table { min-width: 520px; }
-  .pricing-compare-table tbody td { padding: 12px 14px; font-size: 13px; }
+  .pricing-compare-table { min-width: 0; }
+  .pricing-compare-table tbody td { padding: 12px 10px; font-size: 12.5px; }
   .pricing-compare-table .group-row td {
     font-size: 10.5px;
-    padding: 14px 14px 10px;
+    padding: 14px 10px 10px;
     letter-spacing: 0.1em;
   }
-  /* Compact plan-header cells inside the table — keep enough room for full CTA text */
-  .compare-plan-header { min-width: 180px; gap: 6px; }
-  .compare-plan-name { font-size: 16px; }
-  .compare-plan-price { font-size: 12px; }
-  .compare-plan-price .num { font-size: 20px; letter-spacing: -0.4px; }
-  .compare-plan-price .prefix { font-size: 11px; }
-  .compare-plan-cta {
-    padding: 8px 14px;
-    font-size: 12.5px;
-    margin-top: 4px;
-    white-space: nowrap;
+  /* Compact plan-header cells — space-between so the CTA aligns to the bottom
+     and headers stay visually balanced regardless of cell height */
+  .compare-plan-header {
+    min-width: 0;
+    gap: 6px;
+    justify-content: space-between;
+    height: 100%;
   }
-  .pricing-compare-table .compare-th-label { font-size: 20px; padding: 18px 14px; }
-  .pricing-check { width: 20px; height: 20px; }
-  .pricing-check svg { width: 12px; height: 12px; }
+  .compare-plan-name { font-size: 14px; }
+  .compare-plan-price { font-size: 11px; }
+  .compare-plan-price .num { font-size: 17px; letter-spacing: -0.3px; }
+  .compare-plan-price .prefix { font-size: 10.5px; }
+  .compare-plan-cta {
+    padding: 7px 10px;
+    font-size: 11.5px;
+    margin-top: 4px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .pricing-compare-table .compare-th-label {
+    font-size: 16px;
+    padding: 14px 10px;
+  }
+  .pricing-check { width: 18px; height: 18px; }
+  .pricing-check svg { width: 10px; height: 10px; }
 
   /* --- Add-ons — new card structure --- */
   .pricing-addon { border-radius: 14px; }
